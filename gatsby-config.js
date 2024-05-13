@@ -1,42 +1,31 @@
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
+// support for .env, .env.development, and .env.production
+require("dotenv").config()
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
-    siteMetadata: {
-        title: `Maroon Studio`,
-        siteUrl: `https://www.yourdomain.tld`,
+  siteMetadata: {
+    siteUrl: "https://gatsbydrupalhomepage.gatsbyjs.io/",
+    title: "Gatsby Drupal Homepage Starter",
+    author: `Gatsby`,
+    description: "A Gatsby Starter for building homepages with Drupal",
+  },
+  plugins: [
+    {
+      resolve: `gatsby-source-drupal`,
+      options: {
+        baseUrl: process.env.DRUPAL_BASE_URL,
+        basicAuth: {
+          username: process.env.DRUPAL_BASIC_AUTH_USERNAME,
+          password: process.env.DRUPAL_BASIC_AUTH_PASSWORD,
+        },
+        fastBuilds: true,
+      },
     },
-    plugins: [
-        "gatsby-plugin-styled-components",
-        "gatsby-plugin-image",
-        "gatsby-plugin-sitemap",
-        "gatsby-plugin-mdx",
-        {
-            resolve: `gatsby-plugin-google-gtag`,
-            options: {
-                trackingIds: ["G-CNB5VBPXNL"],
-                pluginConfig: {
-                    head: true,
-                },
-            },
-        },
-        "gatsby-plugin-sharp",
-        "gatsby-transformer-sharp",
-        {
-            resolve: "gatsby-source-filesystem",
-            options: {
-                name: "images",
-                path: "./src/images/",
-            },
-            __key: "images",
-        },
-        {
-            resolve: "gatsby-source-filesystem",
-            options: {
-                name: "pages",
-                path: "./src/pages/",
-            },
-            __key: "pages",
-        },
-    ],
+    "gatsby-plugin-sharp",
+    "gatsby-plugin-image",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-vanilla-extract",
+  ],
 }
