@@ -17,6 +17,7 @@
   "dependencies": {
     "@mdx-js/react": "^3.0.1",
     "babel-plugin-styled-components": "^2.1.4",
+    "ftp-deploy": "^2.4.7",
     "gatsby": "^5.13.3",
     "gatsby-plugin-image": "^3.13.1",
     "gatsby-plugin-manifest": "^5.13.1",
