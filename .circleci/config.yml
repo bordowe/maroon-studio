@@ -1,0 +1,25 @@
+version: 2.1
+orbs:
+    node: circleci/node@4.7.0
+
+jobs:
+    build:
+        executor:
+            name: node/default
+            tag: "18.0.0"
+        steps:
+            - checkout
+            - node/install-packages
+            - run: npm run build
+            - run:
+                  name: Deploying
+                  command: node ./.circleci/ftp-deploy.js $FTP_ADDRESS $FTP_USER $FTP_PASSWORD
+
+workflows:
+    version: 2
+    main:
+        jobs:
+            - build:
+                  filters:
+                      branches:
+                          only: main
