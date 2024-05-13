@@ -3,7 +3,7 @@ const ftp = require("basic-ftp")
 const basicFtpClient = new ftp.Client()
 const https = require("https")
 
-const LOCAL_BUILD_DIRECTORY = "public"
+const LOCAL_BUILD_DIRECTORY = "public_html"
 const PRODUCTION_URL = "https://maroon-studio.com/"
 
 const [host, user, password] = process.argv.slice(2)
