@@ -9,7 +9,6 @@ const IndexPage = () => {
         <Layout>
             <GlobalStyles />
             <Hero />
-            <h1>ww</h1>
         </Layout>
     )
 }

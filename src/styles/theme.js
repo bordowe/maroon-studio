@@ -7,12 +7,23 @@ export const breakpoint = {
     mobile: 320,
 }
 const media = {
-    desktop: `(min-width: ${breakpoint.desktop}px)`,
-    laptop: `(max-width: ${breakpoint.laptop}px)`,
-    tablet: `(max-width: ${breakpoint.tablet}px)`,
-    largeMobile: `(max-width: ${breakpoint.largeMobile}px)`,
-    mobile: `(max-width: ${breakpoint.mobile}px)`,
+    largeDesktop: `(width < ${breakpoint.largeDesktop}px)`,
+    desktop: `(width < ${breakpoint.largeDesktop}px)`,
+    laptop: `(width < ${breakpoint.desktop}px)`,
+    tablet: `(width < ${breakpoint.laptop}px)`,
+    largeMobile: `(width < ${breakpoint.tablet}px)`,
+    mobile: `(width < ${breakpoint.largeMobile}px)`,
 }
 export const theme = {
     media,
+}
+
+export const colors = {
+    primaryTextColor: "#73013C",
+    primaryButtonTextColor: "#FFEFF5",
+    secondaryButtonTextColor: "#73013C",
+    primaryButtonColor: "#73013C",
+    secondaryButtonColor: "#FFEFF5",
+    primaryButtonHoverColor: "#36001C",
+    secondaryButtonHoverColor: "#F7CDDC",
 }
