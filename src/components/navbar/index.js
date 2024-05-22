@@ -1,15 +1,13 @@
 import React from "react"
 import {
     NavbarWrapper,
-    LogoNavbar,
     LinksBar,
     LinksWrapper,
     NavbarRigthSection,
 } from "./index.style"
 import { NavbarButton } from "../navbarButton/index.style"
+import Logo from "../logo"
 import HamburgerMenu from "../hamburgerMenu"
-
-import LogoImg from "../../images/maroonStudio-logo.png"
 
 const navbarServicesLinks = [
     {
@@ -37,9 +35,7 @@ const navbarServicesLinks = [
 const Navbar = () => {
     return (
         <NavbarWrapper>
-            <LogoNavbar>
-                <img src={LogoImg} alt="Maroon Studio Logo" />
-            </LogoNavbar>
+            <Logo />
             <LinksBar>
                 {navbarServicesLinks.map(({ id, name, link }) => (
                     <LinksWrapper key={id}>

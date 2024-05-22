@@ -29,7 +29,6 @@ export const HeroBodyImage = styled.div`
     width: fit-content;
     height: fit-content;
     margin-right: 20px;
-    border: 2px solid green;
 
     @media ${theme.media.tablet} {
         width: 280px;
@@ -43,7 +42,6 @@ export const HeroBodyImage = styled.div`
 export const HeroContentWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    border: 2px solid black;
 
     @media ${theme.media.mobile} {
         width: 100%;
@@ -55,7 +53,6 @@ export const HeroBodyTextArea = styled.div`
     gap: 16px;
     width: 530px;
     height: 100%;
-    border: 2px solid red;
 
     @media ${theme.media.tablet} {
         width: 430px;
@@ -63,7 +60,7 @@ export const HeroBodyTextArea = styled.div`
     }
     @media ${theme.media.largeMobile} {
         width: 480px;
-        gap: 8px;
+        gap: 4px;
         padding: 0 32px;
     }
     @media ${theme.media.mobile} {

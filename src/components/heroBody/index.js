@@ -2,10 +2,8 @@ import React from "react"
 
 import "bootstrap/dist/css/bootstrap.min.css"
 
-import { Container } from "react-bootstrap"
 import { StaticImage } from "gatsby-plugin-image"
 
-import HeroImg from "../../images/maroonStudio-heroImage.png"
 import {
     HeroBodyImage,
     HeroContentWrapper,

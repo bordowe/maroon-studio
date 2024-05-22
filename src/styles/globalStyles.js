@@ -20,7 +20,6 @@ export const GlobalStyles = createGlobalStyle`
         font-family: 'DM Sans', sans-serif;
     }
     body {
-        max-width: 1920px;
         margin-left: auto;
         margin-right: auto;
         background-color: #FFEFF5;
