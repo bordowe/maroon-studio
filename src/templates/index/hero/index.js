@@ -1,26 +1,22 @@
 import React from "react"
-
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
-
+import { useState } from "react"
 import Navbar from "../../../components/navbar"
 import HeroBody from "../../../components/heroBody"
-
-const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <Navbar />,
-    },
-    {
-        path: "/",
-        element: <HeroBody />,
-    },
-])
+import NavbarDropdown from "../../../components/navbarDropdown"
 
 const Hero = () => {
+    const [currentSection, setCurrentSection] = useState("heroBody")
+
+    const handleSwitchSection = () => {
+        setCurrentSection((prevSection) =>
+            prevSection === "heroBody" ? "navbarDropdown" : "heroBody"
+        )
+    }
     return (
         <>
-            <Navbar />
-            <HeroBody />
+            <Navbar onToggleSection={handleSwitchSection} />
+            {currentSection === "heroBody" && <HeroBody />}
+            {currentSection === "navbarDropdown" && <NavbarDropdown />}
         </>
     )
 }

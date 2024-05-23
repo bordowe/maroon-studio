@@ -1,15 +1,21 @@
 import styled from "styled-components"
 
 export const HamburgerMenuWrapper = styled.div`
-    width: 100;
-    height: 100%;
-    border: 2px solid green;
-    @media (width > 768px) {
+    display: inline-block;
+    @media (min-width: 768px) {
         display: none;
     }
 `
-export const HamburgerMenuButton = styled.button`
-    width: 50px;
-    height: 50px;
-    border: 2px solid yellow;
+
+export const HamburgerMenuButton = styled.div`
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+    box-sizing: border-box;
+    gap: 6px; /* odstęp między belkami */
 `

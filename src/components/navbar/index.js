@@ -1,4 +1,5 @@
 import React from "react"
+import { useState } from "react"
 import {
     NavbarWrapper,
     LinksBar,
@@ -6,8 +7,10 @@ import {
     NavbarRigthSection,
 } from "./index.style"
 import { NavbarButton } from "../navbarButton/index.style"
+
 import Logo from "../logo"
-import HamburgerMenu from "../hamburgerMenu"
+
+import HamburgerMenu from "../hamburgerMenu/index"
 
 const navbarServicesLinks = [
     {
@@ -32,7 +35,7 @@ const navbarServicesLinks = [
     },
 ]
 
-const Navbar = () => {
+const Navbar = ({ onToggleSection }) => {
     return (
         <NavbarWrapper>
             <Logo />
@@ -45,7 +48,7 @@ const Navbar = () => {
             </LinksBar>
             <NavbarRigthSection>
                 <NavbarButton>contact</NavbarButton>
-                <HamburgerMenu />
+                <HamburgerMenu onToggleSection={onToggleSection} />
             </NavbarRigthSection>
         </NavbarWrapper>
     )
