@@ -38,7 +38,7 @@ const HeroBody = () => {
                     </HeroBodyTextSubtitle>
                     <HeroBodyTextBottomDescription>
                         A digital agency in which the most important factor for
-                        success is the values we uphold.{" "}
+                        success is the values we uphold.
                     </HeroBodyTextBottomDescription>
                 </HeroBodyTextArea>
                 <HeroButtonWrapper>

@@ -12,7 +12,6 @@ export const FooterWrapper = styled.div`
     margin: 0 auto;
     padding: 64px 32px 64px 32px;
     gap: 65px;
-    border: 2px solid purple;
 
     @media ${theme.media.tablet} {
         gap: 25px;
@@ -88,6 +87,11 @@ export const FooterLinksWrapper = styled.div`
         margin-left: 0;
         gap: 15px;
     }
+`
+export const FooterIcon = styled.div`
+    display: flex;
+    width: 25px;
+    aspect-ratio: 1;
 `
 export const FooterLink = styled.div`
     display: flex;

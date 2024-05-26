@@ -12,7 +12,6 @@ export const HeroBodyWrapper = styled.div`
     height: fit-content;
     margin: 0 auto;
     padding: 64px 32px 64px 32px;
-    border: 2px solid purple;
 
     @media ${theme.media.largeMobile} {
         flex-direction: column;
@@ -26,8 +25,8 @@ export const HeroBodyWrapper = styled.div`
 
 export const HeroBodyImage = styled.div`
     display: flex;
-    width: fit-content;
-    height: fit-content;
+    width: 400px;
+    aspect-ratio: 1;
     margin-right: 20px;
 
     @media ${theme.media.tablet} {

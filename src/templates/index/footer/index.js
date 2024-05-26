@@ -1,6 +1,6 @@
 import React from "react"
 
-import Logo from "../../../components/logo"
+import LogoFooter from "../../../components/footerLogo/index.js"
 import InstagramIcon from "../../../images/maroonStudio-instagramIcon.png"
 import WhatsappIcon from "../../../images/maroonStudio-whatsappIcon.png"
 import XIcon from "../../../images/maroonStudio-xIcon.png"
@@ -9,6 +9,7 @@ import BehanceIcon from "../../../images/maroonStudio-behanceIcon.png"
 import LinkedinIcon from "../../../images/maroonStudio-linkedinIcon.png"
 
 import {
+    FooterIcon,
     FooterLink,
     FooterLinksWrapper,
     FooterPrivacyPolicy,
@@ -98,13 +99,15 @@ const Footer = () => {
         <>
             <FooterWrapper>
                 <FooterFirstLine>
-                    <Logo />
+                    <LogoFooter />
                     <SocialIconsWrapper>
                         {footerIconsData.map(({ id, name, alt }) => {
                             const Icon = iconMap[name]
                             return (
                                 <FooterIconsWrapper key={id}>
-                                    <img src={Icon} alt={alt} />
+                                    <FooterIcon>
+                                        <img src={Icon} alt={alt} />
+                                    </FooterIcon>
                                 </FooterIconsWrapper>
                             )
                         })}
