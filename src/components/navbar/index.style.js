@@ -1,5 +1,3 @@
-import React from "react"
-
 import styled from "styled-components"
 
 import { breakpoint } from "../../styles/theme"
@@ -8,6 +6,7 @@ import { theme } from "../../styles/theme"
 export const NavbarWrapper = styled.div`
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
     max-width: ${breakpoint.largeDesktop}px;
     height: fit-content;
@@ -41,13 +40,36 @@ export const LinksWrapper = styled.div`
     line-height: 16px;
     font-weight: 400;
     text-transform: capitalize;
+    position: relative; /* Add relative positioning to parent */
     a {
         color: #73013c;
         text-decoration: none;
     }
 `
 
-export const NavbarRigthSection = styled.div`
+export const NavbarRightSection = styled.div`
     display: flex;
     justify-content: space-between;
+`
+export const DropdownMenu = styled.div`
+    flex-direction: column;
+    display: flex;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    z-index: 2;
+    background-color: #ffeff5;
+`
+
+export const DropdownItem = styled.div`
+    display: flex;
+    padding: 5px 0;
+    width: 200px;
+    border-bottom: 1px solid #73013c;
+    &:hover {
+        background-color: #73013c;
+        a {
+            color: #ffeff5;
+        }
+    }
 `
