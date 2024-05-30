@@ -11,13 +11,13 @@ const HamburgerMenu = ({ onToggleSection }) => {
 
     const toggleHamburgerMenu = () => {
         setIsOpen(!isOpen)
+        onToggleSection(isOpen ? "heroBody" : "mobileNavbarDropdown")
     }
 
     return (
         <HamburgerMenuWrapper>
-            <HamburgerMenuButton onClick={onToggleSection}>
+            <HamburgerMenuButton onClick={toggleHamburgerMenu}>
                 <HamburgerMenuBarsWrapper
-                    onClick={toggleHamburgerMenu}
                     style={{
                         cursor: "pointer",
                         width: "25px",
