@@ -51,10 +51,6 @@ const navbarLinks = [
 const Navbar = ({ onToggleSection }) => {
     const [showServicesMenu, setShowServicesMenu] = useState(false)
 
-    const toggleServicesMenu = () => {
-        setShowServicesMenu(!showServicesMenu)
-    }
-
     const handleServiceClick = () => {
         setShowServicesMenu(!showServicesMenu)
     }
