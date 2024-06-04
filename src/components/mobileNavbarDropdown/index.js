@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-
+import { AnimatePresence, motion } from "framer-motion"
 import {
     NavbarDropdownWrapper,
     NavbarDropdownLink,
@@ -63,7 +63,7 @@ const ServicesSubMenu = [
     },
 ]
 
-const NavbarDropdownServicesImageData = [
+export const NavbarDropdownServicesImageData = [
     {
         id: 1,
         name: "websites",
@@ -98,6 +98,22 @@ const MobileNavbarDropdown = () => {
         setIsServicesOpen(!isServicesOpen)
     }
 
+    const dropdownVariants = {
+        hidden: { opacity: 0, y: -10 },
+        visible: (i) => ({
+            opacity: 1,
+            y: 0,
+            transition: {
+                delay: i * 0.1,
+            },
+        }),
+    }
+
+    const arrowVariants = {
+        open: { rotate: 180 },
+        closed: { rotate: 0 },
+    }
+
     return (
         <NavbarDropdownWrapper>
             {NavbarDropdownData.map((item) => (
@@ -108,51 +124,74 @@ const MobileNavbarDropdown = () => {
                             onClick={handleServicesClick}
                         >
                             {item.name}
-                            <NavbarExpandIcon />
+                            <motion.div
+                                animate={isServicesOpen ? "open" : "closed"}
+                                variants={arrowVariants}
+                            >
+                                <NavbarExpandIcon />
+                            </motion.div>
                         </NavbarDropdownLink>
                     ) : (
                         <NavbarDropdownLink href={item.link}>
                             {item.name}
                         </NavbarDropdownLink>
                     )}
-                    {item.name === "services" && isServicesOpen && (
-                        <ServicesOpenMenu>
-                            {ServicesSubMenu.map((subItem) => {
-                                const iconData =
-                                    NavbarDropdownServicesImageData.find(
-                                        (iconItem) =>
-                                            iconItem.name
-                                                .replace(/ /g, "-")
-                                                .toLowerCase() ===
-                                            subItem.name
-                                                .replace(/ /g, "-")
-                                                .toLowerCase()
+                    <AnimatePresence>
+                        {item.name === "services" && isServicesOpen && (
+                            <ServicesOpenMenu
+                                as={motion.div}
+                                initial="hidden"
+                                animate="visible"
+                                exit="hidden"
+                                variants={{
+                                    hidden: { opacity: 0, height: 0 },
+                                    visible: { opacity: 1, height: "auto" },
+                                }}
+                            >
+                                {ServicesSubMenu.map((subItem, i) => {
+                                    const iconData =
+                                        NavbarDropdownServicesImageData.find(
+                                            (iconItem) =>
+                                                iconItem.name
+                                                    .replace(/ /g, "-")
+                                                    .toLowerCase() ===
+                                                subItem.name
+                                                    .replace(/ /g, "-")
+                                                    .toLowerCase()
+                                        )
+                                    return (
+                                        <NavbarDropdownLink
+                                            key={subItem.id}
+                                            href={subItem.link}
+                                        >
+                                            <ServicesOpenMenuEachServicesWrapper
+                                                as={motion.div}
+                                                custom={i}
+                                                initial="hidden"
+                                                animate="visible"
+                                                exit="hidden"
+                                                variants={dropdownVariants}
+                                            >
+                                                <ServicesOpenMenuEachServicesLinkWrapper>
+                                                    <ServicesOpenMenuEachLinkIcon>
+                                                        <img
+                                                            src={iconData?.icon}
+                                                            alt={`${subItem.name} icon`}
+                                                        />
+                                                    </ServicesOpenMenuEachLinkIcon>
+                                                    <ServicesOpenMenuEachLink>
+                                                        <a href={subItem.link}>
+                                                            {subItem.name}
+                                                        </a>
+                                                    </ServicesOpenMenuEachLink>
+                                                </ServicesOpenMenuEachServicesLinkWrapper>
+                                            </ServicesOpenMenuEachServicesWrapper>
+                                        </NavbarDropdownLink>
                                     )
-                                return (
-                                    <NavbarDropdownLink
-                                        key={subItem.id}
-                                        href={subItem.link}
-                                    >
-                                        <ServicesOpenMenuEachServicesWrapper>
-                                            <ServicesOpenMenuEachServicesLinkWrapper>
-                                                <ServicesOpenMenuEachLinkIcon>
-                                                    <img
-                                                        src={iconData?.icon}
-                                                        alt={`${subItem.name} icon`}
-                                                    />
-                                                </ServicesOpenMenuEachLinkIcon>
-                                                <ServicesOpenMenuEachLink>
-                                                    <a href={subItem.link}>
-                                                        {subItem.name}
-                                                    </a>
-                                                </ServicesOpenMenuEachLink>
-                                            </ServicesOpenMenuEachServicesLinkWrapper>
-                                        </ServicesOpenMenuEachServicesWrapper>
-                                    </NavbarDropdownLink>
-                                )
-                            })}
-                        </ServicesOpenMenu>
-                    )}
+                                })}
+                            </ServicesOpenMenu>
+                        )}
+                    </AnimatePresence>
                 </div>
             ))}
         </NavbarDropdownWrapper>

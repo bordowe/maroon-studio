@@ -40,10 +40,17 @@ export const LinksWrapper = styled.div`
     line-height: 16px;
     font-weight: 400;
     text-transform: capitalize;
-    position: relative; /* Add relative positioning to parent */
+    position: relative;
+
     a {
         color: #73013c;
         text-decoration: none;
+        display: flex;
+        align-items: center;
+    }
+
+    img {
+        margin-left: 5px;
     }
 `
 
@@ -52,24 +59,56 @@ export const NavbarRightSection = styled.div`
     justify-content: space-between;
 `
 export const DropdownMenu = styled.div`
-    flex-direction: column;
     display: flex;
+    flex-direction: column;
     position: absolute;
+    width: 400px;
+    height: fit-content;
+    padding: 15px;
+    gap: 5px;
     top: 25px;
-    left: 0;
+    left: 200;
     z-index: 2;
     background-color: #ffeff5;
+    border-radius: 24px;
+    box-shadow: 0px 4px 35px 0px #00000040;
+
+    a {
+        margin-top: 8px;
+    }
 `
 
 export const DropdownItem = styled.div`
     display: flex;
+    flex-direction: row;
     padding: 5px 0;
-    width: 200px;
-    border-bottom: 1px solid #73013c;
-    &:hover {
+    width: fit-content;
+    height: fit-content;
+    font-weight: 600;
+`
+export const DropdownItemIcon = styled.div`
+    display: flex;
+    margin-right: 10px;
+
+    img {
+        max-width: 30px;
+        max-height: 30px;
+    }
+`
+export const ServicesTextWrapepr = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+
+    &:after {
+        display: block;
+        position: relative;
+        content: "";
+        margin-top: 25px;
+        width: 10px;
+        height: 1px;
+        left: 0;
         background-color: #73013c;
-        a {
-            color: #ffeff5;
-        }
     }
 `
