@@ -8,7 +8,6 @@ import {
     DropdownMenu,
     DropdownItem,
     DropdownItemIcon,
-    ServicesTextWrapepr,
 } from "./index.style"
 
 import NavbarExpandIcon from "../expandIcon"
@@ -16,10 +15,8 @@ import { NavbarButton } from "../navbarButton/index.style"
 import Logo from "../logo"
 import HamburgerMenu from "../hamburgerMenu/index"
 
-import WebsitesServiceIcon from "../../images/maroonStudio-websitesServiceIcon.png"
-import SeoServiceIcon from "../../images/maroonStudio-seoServiceIcon.png"
-import OnlineMarketingServiceIcon from "../../images/maroonStudio-onlineMarketingServiceIcon.png"
-import SocialMediaManagementServiceIcon from "../../images/maroonStudio-socialMediaManagementServiceIcon.png"
+import { graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
 
 const navbarLinks = [
     {
@@ -31,25 +28,25 @@ const navbarLinks = [
                 id: 1,
                 name: "Websites",
                 link: "services/websites",
-                icon: WebsitesServiceIcon,
+                iconName: "WebsitesServiceIcon",
             },
             {
                 id: 2,
                 name: "SEO",
                 link: "services/seo",
-                icon: SeoServiceIcon,
+                iconName: "SeoServiceIcon",
             },
             {
                 id: 3,
                 name: "Online marketing",
                 link: "services/online-marketing",
-                icon: OnlineMarketingServiceIcon,
+                iconName: "OnlineMarketingServiceIcon",
             },
             {
                 id: 4,
                 name: "Social media management",
                 link: "services/social-media-management",
-                icon: SocialMediaManagementServiceIcon,
+                iconName: "SocialMediaManagementServiceIcon",
             },
         ],
     },
@@ -75,6 +72,55 @@ const Navbar = ({ onToggleSection }) => {
 
     const handleServiceClick = () => {
         setShowServicesMenu(!showServicesMenu)
+    }
+
+    const imagesData = useStaticQuery(graphql`
+        query {
+            WebsitesServiceIcon: file(
+                relativePath: { eq: "maroonStudio-websitesServiceIcon.png" }
+            ) {
+                childImageSharp {
+                    fluid(maxHeight: 30, maxWidth: 30) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            SeoServiceIcon: file(
+                relativePath: { eq: "maroonStudio-seoServiceIcon.png" }
+            ) {
+                childImageSharp {
+                    fluid(maxHeight: 30, maxWidth: 30) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            OnlineMarketingServiceIcon: file(
+                relativePath: {
+                    eq: "maroonStudio-onlineMarketingServiceIcon.png"
+                }
+            ) {
+                childImageSharp {
+                    fluid(maxHeight: 30, maxWidth: 30) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            SocialMediaManagementServiceIcon: file(
+                relativePath: {
+                    eq: "maroonStudio-socialMediaManagementServiceIcon.png"
+                }
+            ) {
+                childImageSharp {
+                    fluid(maxHeight: 30, maxWidth: 30) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+        }
+    `)
+
+    const getImageData = (iconName) => {
+        return imagesData[iconName]?.childImageSharp?.fluid
     }
 
     const dropdownVariants = {
@@ -126,7 +172,10 @@ const Navbar = ({ onToggleSection }) => {
                                         }}
                                     >
                                         {submenu.map(
-                                            ({ id, name, link, icon }, i) => (
+                                            (
+                                                { id, name, link, iconName },
+                                                i
+                                            ) => (
                                                 <DropdownItem
                                                     key={id}
                                                     as={motion.div}
@@ -137,16 +186,18 @@ const Navbar = ({ onToggleSection }) => {
                                                     variants={dropdownVariants}
                                                 >
                                                     <DropdownItemIcon>
-                                                        <img
-                                                            src={icon}
+                                                        <Img
+                                                            fluid={getImageData(
+                                                                iconName
+                                                            )}
                                                             alt={name}
+                                                            style={{
+                                                                width: "40px",
+                                                                height: "30px",
+                                                            }}
                                                         />
                                                     </DropdownItemIcon>
-                                                    <ServicesTextWrapepr>
-                                                        <a href={link}>
-                                                            {name}
-                                                        </a>
-                                                    </ServicesTextWrapepr>
+                                                    <a href={link}>{name}</a>
                                                 </DropdownItem>
                                             )
                                         )}

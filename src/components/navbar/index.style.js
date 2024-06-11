@@ -95,20 +95,3 @@ export const DropdownItemIcon = styled.div`
         max-height: 30px;
     }
 `
-export const ServicesTextWrapepr = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
-    height: fit-content;
-
-    &:after {
-        display: block;
-        position: relative;
-        content: "";
-        margin-top: 25px;
-        width: 10px;
-        height: 1px;
-        left: 0;
-        background-color: #73013c;
-    }
-`
