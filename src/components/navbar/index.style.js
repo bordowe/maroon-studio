@@ -72,23 +72,24 @@ export const DropdownMenu = styled.div`
     background-color: #ffeff5;
     border-radius: 24px;
     box-shadow: 0px 4px 35px 0px #00000040;
-
-    a {
-        margin-top: 8px;
-    }
 `
 
 export const DropdownItem = styled.div`
     display: flex;
     flex-direction: row;
-    padding: 5px 0;
-    width: fit-content;
+    padding: 5px 10px;
+    width: 100%;
     height: fit-content;
     font-weight: 600;
+    border-radius: 5px;
+    gap: 5px;
+
+    &:hover {
+        background-color: #f7c3d9;
+    }
 `
 export const DropdownItemIcon = styled.div`
     display: flex;
-    margin-right: 10px;
 
     img {
         max-width: 30px;
