@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import {
     NavbarWrapper,
@@ -69,10 +69,24 @@ const navbarLinks = [
 
 const Navbar = ({ onToggleSection }) => {
     const [showServicesMenu, setShowServicesMenu] = useState(false)
+    const menuRef = useRef(null)
 
     const handleServiceClick = () => {
         setShowServicesMenu(!showServicesMenu)
     }
+
+    const handleClickOutside = (event) => {
+        if (menuRef.current && !menuRef.current.contains(event.target)) {
+            setShowServicesMenu(false)
+        }
+    }
+
+    useEffect(() => {
+        document.addEventListener("mousedown", handleClickOutside)
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside)
+        }
+    }, [])
 
     const imagesData = useStaticQuery(graphql`
         query {
@@ -139,7 +153,10 @@ const Navbar = ({ onToggleSection }) => {
             <Logo />
             <LinksBar>
                 {navbarLinks.map(({ id, name, link, submenu }) => (
-                    <LinksWrapper key={id}>
+                    <LinksWrapper
+                        key={id}
+                        ref={submenu && name === "services" ? menuRef : null}
+                    >
                         <a
                             href={link}
                             onClick={(event) => {
