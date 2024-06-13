@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react"
+import { Link } from "gatsby"
 import { AnimatePresence, motion } from "framer-motion"
 import {
     NavbarWrapper,
@@ -150,7 +151,9 @@ const Navbar = ({ onToggleSection }) => {
 
     return (
         <NavbarWrapper>
-            <Logo />
+            <Link to="/">
+                <Logo />
+            </Link>
             <LinksBar>
                 {navbarLinks.map(({ id, name, link, submenu }) => (
                     <LinksWrapper
