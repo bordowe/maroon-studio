@@ -1,8 +1,7 @@
 import React from "react"
 
-import "bootstrap/dist/css/bootstrap.min.css"
-
-import { StaticImage } from "gatsby-plugin-image"
+import { graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
 
 import {
     HeroBodyImage,
@@ -19,12 +18,26 @@ import {
 import HeroBodyButtons from "../heroBodyButtons"
 
 const HeroBody = () => {
+    const imagesData = useStaticQuery(graphql`
+        query {
+            HeroSectionImage: file(
+                relativePath: { eq: "maroonStudio-heroImage.png" }
+            ) {
+                childImageSharp {
+                    fluid(quality: 100) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+        }
+    `)
     return (
         <HeroBodyWrapper>
             <HeroBodyImage>
-                <StaticImage
-                    src="../../images/maroonStudio-heroImage.png"
-                    alt="Hero Image"
+                <Img
+                    fluid={imagesData.HeroSectionImage.childImageSharp.fluid}
+                    alt="Woman cheking maroon-studio.com"
+                    style={{ width: "100%", height: "100%" }}
                 />
             </HeroBodyImage>
             <HeroContentWrapper>
