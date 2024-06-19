@@ -46,18 +46,12 @@ export const ServicesOpenMenuEachServicesLinkWrapper = styled.p`
 export const ServicesOpenMenuEachLink = styled.p`
     width: fit-content;
     height: fit-content;
-    padding: 0px 0px 0px 10px;
+    padding: 0px 0px 0px 15px;
     gap: 10px;
     font-size: 24px;
     font-weight: 550;
     line-height: 24px;
     text-align: left;
-`
-export const ServicesOpenMenuEachLinkIcon = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 25px;
-    aspect-ratio: 1;
 
     &:after {
         display: block;
@@ -68,4 +62,10 @@ export const ServicesOpenMenuEachLinkIcon = styled.div`
         height: 1px;
         background-color: #73013c;
     }
+`
+export const ServicesOpenMenuEachLinkIcon = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 25px;
+    aspect-ratio: 1;
 `

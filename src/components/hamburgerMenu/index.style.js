@@ -5,7 +5,7 @@ export const HamburgerMenuWrapper = styled.div`
     margin-top: auto;
     margin-bottom: auto;
 
-    @media (min-width: 768px) {
+    @media (width > 768px) {
         display: none;
     }
 `

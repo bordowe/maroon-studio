@@ -1,12 +1,34 @@
 import React from "react"
 
-import LogoImg from "../../images/maroonStudio-logo.png"
 import { LogoNavbar } from "./index.style"
+import { graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
 
 const Logo = () => {
+    const imagesData = useStaticQuery(graphql`
+        query {
+            WebsitesServiceIcon: file(
+                relativePath: { eq: "maroonStudio-logo.png" }
+            ) {
+                childImageSharp {
+                    fluid(maxHeight: 28, maxWidth: 70) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+        }
+    `)
+
     return (
         <LogoNavbar>
-            <img src={LogoImg} alt="Maroon Studio Logo" />
+            <Img
+                fluid={imagesData.WebsitesServiceIcon.childImageSharp.fluid}
+                alt="Maroon Studio Logo"
+                style={{
+                    width: "70px",
+                    height: "28px",
+                }}
+            />
         </LogoNavbar>
     )
 }

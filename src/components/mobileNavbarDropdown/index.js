@@ -1,5 +1,8 @@
 import React, { useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
+import { graphql, useStaticQuery } from "gatsby"
+import Img from "gatsby-image"
+
 import {
     NavbarDropdownWrapper,
     NavbarDropdownLink,
@@ -11,11 +14,6 @@ import {
 } from "./index.style"
 
 import NavbarExpandIcon from "../expandIcon"
-
-import WebsitesServiceIcon from "../../images/maroonStudio-websitesServiceIcon.png"
-import SeoServiceIcon from "../../images/maroonStudio-seoServiceIcon.png"
-import OnlineMarketingServiceIcon from "../../images/maroonStudio-onlineMarketingServiceIcon.png"
-import SocialMediaManagementServiceIcon from "../../images/maroonStudio-socialMediaManagementServiceIcon.png"
 
 const NavbarDropdownData = [
     {
@@ -63,39 +61,67 @@ const ServicesSubMenu = [
     },
 ]
 
-export const NavbarDropdownServicesImageData = [
-    {
-        id: 1,
-        name: "websites",
-        link: "#",
-        icon: WebsitesServiceIcon,
-    },
-    {
-        id: 2,
-        name: "seo",
-        link: "#",
-        icon: SeoServiceIcon,
-    },
-    {
-        id: 3,
-        name: "online-marketing",
-        link: "#",
-        icon: OnlineMarketingServiceIcon,
-    },
-    {
-        id: 4,
-        name: "social-media-management",
-        link: "#",
-        icon: SocialMediaManagementServiceIcon,
-    },
-]
-
 const MobileNavbarDropdown = () => {
     const [isServicesOpen, setIsServicesOpen] = useState(false)
 
     const handleServicesClick = (click) => {
         click.preventDefault()
         setIsServicesOpen(!isServicesOpen)
+    }
+
+    const imagesData = useStaticQuery(graphql`
+        query {
+            WebsitesServiceIcon: file(
+                relativePath: { eq: "maroonStudio-websitesServiceIcon.png" }
+            ) {
+                childImageSharp {
+                    fluid(maxHeight: 30, maxWidth: 30) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            SeoServiceIcon: file(
+                relativePath: { eq: "maroonStudio-seoServiceIcon.png" }
+            ) {
+                childImageSharp {
+                    fluid(maxHeight: 30, maxWidth: 30) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            OnlineMarketingServiceIcon: file(
+                relativePath: {
+                    eq: "maroonStudio-onlineMarketingServiceIcon.png"
+                }
+            ) {
+                childImageSharp {
+                    fluid(maxHeight: 30, maxWidth: 30) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+            SocialMediaManagementServiceIcon: file(
+                relativePath: {
+                    eq: "maroonStudio-socialMediaManagementServiceIcon.png"
+                }
+            ) {
+                childImageSharp {
+                    fluid(maxHeight: 30, maxWidth: 30) {
+                        ...GatsbyImageSharpFluid
+                    }
+                }
+            }
+        }
+    `)
+
+    const getImageData = (serviceName) => {
+        const iconNameMap = {
+            Websites: "WebsitesServiceIcon",
+            SEO: "SeoServiceIcon",
+            "Online marketing": "OnlineMarketingServiceIcon",
+            "Social media management": "SocialMediaManagementServiceIcon",
+        }
+        return imagesData[iconNameMap[serviceName]]?.childImageSharp?.fluid
     }
 
     const dropdownVariants = {
@@ -149,16 +175,7 @@ const MobileNavbarDropdown = () => {
                                 }}
                             >
                                 {ServicesSubMenu.map((subItem, i) => {
-                                    const iconData =
-                                        NavbarDropdownServicesImageData.find(
-                                            (iconItem) =>
-                                                iconItem.name
-                                                    .replace(/ /g, "-")
-                                                    .toLowerCase() ===
-                                                subItem.name
-                                                    .replace(/ /g, "-")
-                                                    .toLowerCase()
-                                        )
+                                    const iconData = getImageData(subItem.name)
                                     return (
                                         <NavbarDropdownLink
                                             key={subItem.id}
@@ -174,9 +191,13 @@ const MobileNavbarDropdown = () => {
                                             >
                                                 <ServicesOpenMenuEachServicesLinkWrapper>
                                                     <ServicesOpenMenuEachLinkIcon>
-                                                        <img
-                                                            src={iconData?.icon}
+                                                        <Img
+                                                            fluid={iconData}
                                                             alt={`${subItem.name} icon`}
+                                                            style={{
+                                                                width: "30px",
+                                                                height: "30px",
+                                                            }}
                                                         />
                                                     </ServicesOpenMenuEachLinkIcon>
                                                     <ServicesOpenMenuEachLink>
