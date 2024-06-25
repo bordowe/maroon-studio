@@ -35,5 +35,11 @@ module.exports = {
             },
             __key: "pages",
         },
+        {
+            resolve: "gatsby-plugin-htaccess",
+            options: {
+                https: true,
+            },
+        },
     ],
 }
