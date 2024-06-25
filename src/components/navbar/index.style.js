@@ -47,10 +47,7 @@ export const LinksWrapper = styled.div`
         text-decoration: none;
         display: flex;
         align-items: center;
-    }
-
-    img {
-        margin-left: 5px;
+        gap: 5px;
     }
 `
 
@@ -65,7 +62,7 @@ export const DropdownMenu = styled.div`
     width: 400px;
     height: fit-content;
     padding: 15px;
-    gap: 5px;
+    gap: 10px;
     top: 25px;
     left: 200;
     z-index: 2;
@@ -76,23 +73,32 @@ export const DropdownMenu = styled.div`
 
 export const DropdownItem = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 5px 10px;
     width: 100%;
     height: fit-content;
     font-weight: 600;
     border-radius: 5px;
-    gap: 5px;
+    gap: 10px;
 
     &:hover {
         background-color: #f7c3d9;
     }
 `
+export const DropdownItemTitle = styled.div`
+    display: flex;
+    gap: 5px;
+`
+export const DropdownItemSubtitle = styled.div`
+    display: flex;
+    max-width: ${breakpoint.mobile}px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: left;
+    color: #73013c;
+`
+
 export const DropdownItemIcon = styled.div`
     display: flex;
-
-    img {
-        max-width: 30px;
-        max-height: 30px;
-    }
 `

@@ -9,6 +9,8 @@ import {
     DropdownMenu,
     DropdownItem,
     DropdownItemIcon,
+    DropdownItemTitle,
+    DropdownItemSubtitle,
 } from "./index.style"
 
 import NavbarExpandIcon from "../expandIcon"
@@ -30,24 +32,32 @@ const navbarLinks = [
                 name: "Websites",
                 link: "services/websites",
                 iconName: "WebsitesServiceIcon",
+                subtitle:
+                    "Custom, responsive websites that are visually appealing, highly functional, and optimized for performance.",
             },
             {
                 id: 2,
                 name: "SEO",
                 link: "services/seo",
                 iconName: "SeoServiceIcon",
+                subtitle:
+                    "Boost search engine rankings with keyword research, on-page optimization, and high-quality backlinks.",
             },
             {
                 id: 3,
                 name: "Online marketing",
                 link: "services/online-marketing",
                 iconName: "OnlineMarketingServiceIcon",
+                subtitle:
+                    "Targeted advertising campaigns across platforms, optimized for maximum ROI with advanced analytics.",
             },
             {
                 id: 4,
                 name: "Social media management",
                 link: "services/social-media-management",
                 iconName: "SocialMediaManagementServiceIcon",
+                subtitle:
+                    "Engage your audience with compelling posts, community management, and effective social media strategies.",
             },
         ],
     },
@@ -193,7 +203,13 @@ const Navbar = ({ onToggleSection }) => {
                                     >
                                         {submenu.map(
                                             (
-                                                { id, name, link, iconName },
+                                                {
+                                                    id,
+                                                    name,
+                                                    link,
+                                                    iconName,
+                                                    subtitle,
+                                                },
                                                 i
                                             ) => (
                                                 <DropdownItem
@@ -205,19 +221,26 @@ const Navbar = ({ onToggleSection }) => {
                                                     exit="hidden"
                                                     variants={dropdownVariants}
                                                 >
-                                                    <DropdownItemIcon>
-                                                        <Img
-                                                            fluid={getImageData(
-                                                                iconName
-                                                            )}
-                                                            alt={name}
-                                                            style={{
-                                                                width: "40px",
-                                                                height: "30px",
-                                                            }}
-                                                        />
-                                                    </DropdownItemIcon>
-                                                    <a href={link}>{name}</a>
+                                                    <DropdownItemTitle>
+                                                        <DropdownItemIcon>
+                                                            <Img
+                                                                fluid={getImageData(
+                                                                    iconName
+                                                                )}
+                                                                alt={name}
+                                                                style={{
+                                                                    width: "30px",
+                                                                    height: "30px",
+                                                                }}
+                                                            />
+                                                        </DropdownItemIcon>
+                                                        <a href={link}>
+                                                            {name}
+                                                        </a>
+                                                    </DropdownItemTitle>
+                                                    <DropdownItemSubtitle>
+                                                        {subtitle}
+                                                    </DropdownItemSubtitle>
                                                 </DropdownItem>
                                             )
                                         )}
