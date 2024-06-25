@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { breakpoint } from "../../styles/theme"
 
 export const NavbarDropdownWrapper = styled.div`
     display: flex;
@@ -28,6 +29,10 @@ export const ServicesOpenMenu = styled.div`
     width: fit-content;
     height: fit-content;
 `
+export const ServicesOpenMenuEachServicesTitleWrapper = styled.div`
+    display: flex;
+    text-align: center;
+`
 export const ServicesOpenMenuEachServicesWrapper = styled.div`
     display: flex;
     width: fit-content;
@@ -36,8 +41,12 @@ export const ServicesOpenMenuEachServicesWrapper = styled.div`
 `
 export const ServicesOpenMenuEachServicesLinkWrapper = styled.p`
     display: flex;
+    flex-direction: column;
 
     a {
+        display: flex;
+        margin-top: 8px;
+        margin-left: 15px;
         text-decoration: none;
         color: #73013c;
     }
@@ -52,16 +61,15 @@ export const ServicesOpenMenuEachLink = styled.p`
     font-weight: 550;
     line-height: 24px;
     text-align: left;
+`
 
-    &:after {
-        display: block;
-        position: relative;
-        content: "";
-        margin-top: 25px;
-        width: 10px;
-        height: 1px;
-        background-color: #73013c;
-    }
+export const ServicesOpenMenuEachLinkSubtitle = styled.h3`
+    display: flex;
+    max-width: ${breakpoint.largeMobile}px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: left;
 `
 export const ServicesOpenMenuEachLinkIcon = styled.div`
     display: flex;

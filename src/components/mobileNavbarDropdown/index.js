@@ -8,8 +8,10 @@ import {
     NavbarDropdownLink,
     ServicesOpenMenu,
     ServicesOpenMenuEachServicesLinkWrapper,
+    ServicesOpenMenuEachServicesTitleWrapper,
     ServicesOpenMenuEachServicesWrapper,
     ServicesOpenMenuEachLink,
+    ServicesOpenMenuEachLinkSubtitle,
     ServicesOpenMenuEachLinkIcon,
 } from "./index.style"
 
@@ -43,21 +45,29 @@ const ServicesSubMenu = [
         id: 1,
         name: "Websites",
         link: "#",
+        subtitle:
+            "Custom, responsive websites that are visually appealing, highly functional, and optimized for performance.",
     },
     {
         id: 2,
         name: "SEO",
         link: "#",
+        subtitle:
+            "Boost search engine rankings with keyword research, on-page optimization, and high-quality backlinks.",
     },
     {
         id: 3,
         name: "Online marketing",
         link: "#",
+        subtitle:
+            "Targeted advertising campaigns across platforms, optimized for maximum ROI with advanced analytics.",
     },
     {
         id: 4,
         name: "Social media management",
         link: "#",
+        subtitle:
+            "Engage your audience with compelling posts, community management, and effective social media strategies.",
     },
 ]
 
@@ -75,7 +85,7 @@ const MobileNavbarDropdown = () => {
                 relativePath: { eq: "maroonStudio-websitesServiceIcon.png" }
             ) {
                 childImageSharp {
-                    fluid(maxHeight: 30, maxWidth: 30) {
+                    fluid(maxHeight: 40, maxWidth: 40) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -84,7 +94,7 @@ const MobileNavbarDropdown = () => {
                 relativePath: { eq: "maroonStudio-seoServiceIcon.png" }
             ) {
                 childImageSharp {
-                    fluid(maxHeight: 30, maxWidth: 30) {
+                    fluid(maxHeight: 40, maxWidth: 40) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -95,7 +105,7 @@ const MobileNavbarDropdown = () => {
                 }
             ) {
                 childImageSharp {
-                    fluid(maxHeight: 30, maxWidth: 30) {
+                    fluid(maxHeight: 40, maxWidth: 40) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -106,7 +116,7 @@ const MobileNavbarDropdown = () => {
                 }
             ) {
                 childImageSharp {
-                    fluid(maxHeight: 30, maxWidth: 30) {
+                    fluid(maxHeight: 40, maxWidth: 40) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -190,21 +200,30 @@ const MobileNavbarDropdown = () => {
                                                 variants={dropdownVariants}
                                             >
                                                 <ServicesOpenMenuEachServicesLinkWrapper>
-                                                    <ServicesOpenMenuEachLinkIcon>
-                                                        <Img
-                                                            fluid={iconData}
-                                                            alt={`${subItem.name} icon`}
-                                                            style={{
-                                                                width: "30px",
-                                                                height: "30px",
-                                                            }}
-                                                        />
-                                                    </ServicesOpenMenuEachLinkIcon>
-                                                    <ServicesOpenMenuEachLink>
-                                                        <a href={subItem.link}>
-                                                            {subItem.name}
-                                                        </a>
-                                                    </ServicesOpenMenuEachLink>
+                                                    <ServicesOpenMenuEachServicesTitleWrapper>
+                                                        <ServicesOpenMenuEachLinkIcon>
+                                                            <Img
+                                                                fluid={iconData}
+                                                                alt={`${subItem.name} icon`}
+                                                                style={{
+                                                                    width: "40px",
+                                                                    height: "40px",
+                                                                }}
+                                                            />
+                                                        </ServicesOpenMenuEachLinkIcon>
+                                                        <ServicesOpenMenuEachLink>
+                                                            <a
+                                                                href={
+                                                                    subItem.link
+                                                                }
+                                                            >
+                                                                {subItem.name}
+                                                            </a>
+                                                        </ServicesOpenMenuEachLink>
+                                                    </ServicesOpenMenuEachServicesTitleWrapper>
+                                                    <ServicesOpenMenuEachLinkSubtitle>
+                                                        {subItem.subtitle}
+                                                    </ServicesOpenMenuEachLinkSubtitle>
                                                 </ServicesOpenMenuEachServicesLinkWrapper>
                                             </ServicesOpenMenuEachServicesWrapper>
                                         </NavbarDropdownLink>
