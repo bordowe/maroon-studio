@@ -52,6 +52,7 @@ export const SocialIconsWrapper = styled.div`
     }
 `
 export const FooterIconsWrapper = styled.div`
+    display: none;
     width: fit-content;
     height: fit-content;
     background-repeat: no-repeat;
