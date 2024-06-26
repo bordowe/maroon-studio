@@ -26,7 +26,11 @@ export const RealValueSampelDataWrapper = styled.div`
     align-items: center;
 
     @media ${theme.media.tablet} {
-        width: 200px;
+        width: 250px;
+    }
+
+    @media ${theme.media.mobile} {
+        gap: 5px;
     }
 `
 export const RealValueSampelDataFirstLine = styled.div`
@@ -63,14 +67,26 @@ export const RealValueSampelDataSecondLine = styled.div`
 `
 export const RealValueSampelImageWrapper = styled.div`
     display: flex;
+    justify-content: flex-start;
     width: 45px;
     aspect-ratio: 1;
+
+    @media ${theme.media.mobile} {
+        width: 100%;
+        height: fit-content;
+        aspect-ratio: unset;
+    }
 `
 export const RealValueSampelTitleWrapper = styled.div`
     display: flex;
     justify-content: center;
     width: 200px;
     height: fit-content;
+
+    @media ${theme.media.mobile} {
+        justify-content: flex-start;
+        width: 100%;
+    }
 `
 export const RealValueSampelTitle = styled.h3`
     font-size: 24px;
@@ -82,6 +98,9 @@ export const RealValueSampelTitle = styled.h3`
         font-size: 16px;
         font-weight: 500;
         line-height: 16px;
+    }
+    @media ${theme.media.mobile} {
+        text-align: left;
     }
 `
 export const RealValueSampelLoreWrapper = styled.h3`
@@ -100,5 +119,9 @@ export const RealValueSampelLore = styled.h3`
         font-size: 14px;
         font-weight: 400;
         line-height: 14px;
+    }
+
+    @media ${theme.media.mobile} {
+        text-align: left;
     }
 `
