@@ -20,10 +20,12 @@ export const theme = {
 
 export const colors = {
     primaryTextColor: "#73013C",
+    secondaryTextColor: "#FFEFF5",
     primaryButtonTextColor: "#FFEFF5",
     secondaryButtonTextColor: "#73013C",
     primaryButtonColor: "#73013C",
     secondaryButtonColor: "#FFEFF5",
     primaryButtonHoverColor: "#36001C",
     secondaryButtonHoverColor: "#F7CDDC",
+    sectionBackgroundColor: "#FFE0EB",
 }
