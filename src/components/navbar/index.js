@@ -172,7 +172,7 @@ const Navbar = ({ onToggleSection }) => {
                 <Logo />
             </Link>
             <LinksBar>
-                {navbarLinks.map(({ id, name, link, submenu }) => (
+                {navbarLinks.map(({ id, name, link, submenu }, index) => (
                     <LinksWrapper
                         key={id}
                         ref={submenu && name === "services" ? menuRef : null}
@@ -184,6 +184,13 @@ const Navbar = ({ onToggleSection }) => {
                                     event.preventDefault()
                                     handleServiceClick()
                                 }
+                            }}
+                            id={`${name}`}
+                            style={{
+                                textDecoration:
+                                    index === 1 || index === 2 || index === 3
+                                        ? "line-through"
+                                        : "none",
                             }}
                         >
                             {name}{" "}
