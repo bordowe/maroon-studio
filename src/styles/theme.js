@@ -28,4 +28,5 @@ export const colors = {
     primaryButtonHoverColor: "#36001C",
     secondaryButtonHoverColor: "#F7CDDC",
     sectionBackgroundColor: "#FFE0EB",
+    secondarySectionBackgroundColor: "#73013C",
 }
