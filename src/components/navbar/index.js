@@ -99,6 +99,13 @@ const Navbar = ({ onToggleSection }) => {
         }
     }, [])
 
+    const scrollToContact = (divId) => {
+        const id = document.getElementById(divId)
+        if (id) {
+            id.scrollIntoView({ behavior: "smooth" })
+        }
+    }
+
     const imagesData = useStaticQuery(graphql`
         query {
             WebsitesServiceIcon: file(
@@ -251,7 +258,11 @@ const Navbar = ({ onToggleSection }) => {
                 ))}
             </LinksBar>
             <NavbarRightSection>
-                <NavbarButton>contact</NavbarButton>
+                <NavbarButton
+                    onClick={() => scrollToContact("contact-section")}
+                >
+                    contact
+                </NavbarButton>
                 <HamburgerMenu onToggleSection={onToggleSection} />
             </NavbarRightSection>
         </NavbarWrapper>
