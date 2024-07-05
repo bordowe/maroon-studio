@@ -16,11 +16,14 @@
   },
   "dependencies": {
     "@apollo/server": "^4.10.4",
+    "@fontsource/dm-sans": "^5.0.21",
     "@mdx-js/react": "^3.0.1",
+    "axios": "^1.7.2",
     "babel-plugin-styled-components": "^2.1.4",
     "basic-ftp": "^5.0.5",
     "bootstrap": "^5.3.3",
     "express": "^4.19.2",
+    "formik": "^2.4.6",
     "framer-motion": "^11.2.6",
     "ftp-deploy": "^2.4.7",
     "gatsby": "^5.13.3",
@@ -44,6 +47,7 @@
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.23.1",
     "sort-by": "^1.2.0",
-    "styled-components": "^6.1.11"
+    "styled-components": "^6.1.11",
+    "yup": "^1.4.0"
   }
 }
