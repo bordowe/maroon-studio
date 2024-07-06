@@ -59,7 +59,7 @@ const InterestSection = () => {
     })
 
     return (
-        <InterestSectionWrapper>
+        <InterestSectionWrapper id="contact-section">
             {!isSent ? (
                 <InterestSectionData>
                     <InterestSectionLeftColumn>
