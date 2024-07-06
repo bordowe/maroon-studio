@@ -168,7 +168,10 @@ const MobileNavbarDropdown = () => {
                             </motion.div>
                         </NavbarDropdownLink>
                     ) : (
-                        <NavbarDropdownLink href={item.link}>
+                        <NavbarDropdownLink
+                            href={item.link}
+                            style={{ textDecoration: "line-through" }}
+                        >
                             {item.name}
                         </NavbarDropdownLink>
                     )}
