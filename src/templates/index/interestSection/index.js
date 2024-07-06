@@ -78,7 +78,7 @@ const InterestSection = () => {
                         </InterestSectionLeftColumnLore>
                         <InterestSectionLeftColumnButtonsWrapper>
                             <ContactViaEmailButton />
-                            <WhatsappCommingSoonButton />
+                            {/* <WhatsappCommingSoonButton /> */}
                         </InterestSectionLeftColumnButtonsWrapper>
                     </InterestSectionLeftColumn>
                     <InterestSectionRightColumn>
@@ -133,7 +133,7 @@ const InterestSection = () => {
                     </InterestSectionRightColumn>
                 </InterestSectionData>
             ) : (
-                <InterestSectionData>
+                <InterestSectionData style={{ padding: "150px" }}>
                     <ContactSuccessSendText />
                 </InterestSectionData>
             )}
