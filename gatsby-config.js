@@ -4,7 +4,7 @@
 module.exports = {
     siteMetadata: {
         title: `Maroon Studio`,
-        siteUrl: `https://www.yourdomain.tld`,
+        siteUrl: `https://www.maroon-studio.com`,
     },
     plugins: [
         "gatsby-plugin-styled-components",
