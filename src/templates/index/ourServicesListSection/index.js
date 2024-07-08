@@ -14,7 +14,7 @@ import OurServicesListSectionSampel from "../../../components/ourServicesListSam
 
 const OurServicesListSection = () => {
     return (
-        <OurServicesListSectionWrapper>
+        <OurServicesListSectionWrapper id="services-section">
             <OurServicesListSectionDataWrapper>
                 <OurServicesListSectionTextsAreaWrapper>
                     <OurServicesListSectionName>
