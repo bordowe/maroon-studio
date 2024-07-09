@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-import { breakpoint } from "../../styles/theme"
+import { breakpoint, colors } from "../../styles/theme"
 import { theme } from "../../styles/theme"
 
 export const NavbarWrapper = styled.div`
@@ -24,9 +24,43 @@ export const LinksBar = styled.div`
     display: flex;
     width: fit-content;
     height: fit-content;
-    gap: 25px;
-    @media (width < 769px) {
+    gap: 15px;
+
+    @media (max-width: 768px) {
         display: none;
+    }
+
+    a {
+        color: #73013c;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-radius: 5px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    a::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: ${colors.navbarHoverLinkColor};
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease-in-out;
+        z-index: -1;
+    }
+
+    a:hover::before {
+        transform: scaleX(1);
+    }
+
+    a:nth-child(1) {
+        gap: 5px;
     }
 `
 
@@ -41,16 +75,7 @@ export const LinksWrapper = styled.div`
     font-weight: 400;
     text-transform: capitalize;
     position: relative;
-
-    a {
-        color: #73013c;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-    }
 `
-
 export const NavbarRightSection = styled.div`
     display: flex;
     justify-content: space-between;
@@ -80,10 +105,6 @@ export const DropdownItem = styled.div`
     font-weight: 600;
     border-radius: 5px;
     gap: 10px;
-
-    &:hover {
-        background-color: #f7c3d9;
-    }
 `
 export const DropdownItemTitle = styled.div`
     display: flex;

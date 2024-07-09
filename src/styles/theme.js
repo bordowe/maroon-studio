@@ -19,6 +19,7 @@ export const theme = {
 }
 
 export const colors = {
+    navbarHoverLinkColor: "#F7C3D9",
     primaryTextColor: "#73013C",
     secondaryTextColor: "#FFEFF5",
     primaryButtonTextColor: "#FFEFF5",
