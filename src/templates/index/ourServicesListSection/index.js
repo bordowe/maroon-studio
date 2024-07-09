@@ -1,5 +1,6 @@
 import React from "react"
-
+import { useRef } from "react"
+import { useInView } from "framer-motion"
 import {
     OurServicesListSectionDataWrapper,
     OurServicesListSectionTextsAreaWrapper,
@@ -13,8 +14,18 @@ import {
 import OurServicesListSectionSampel from "../../../components/ourServicesListSampel"
 
 const OurServicesListSection = () => {
+    const ref = useRef(null)
+    const isInView = useInView(ref, { once: true })
     return (
-        <OurServicesListSectionWrapper id="services-section">
+        <OurServicesListSectionWrapper
+            id="services-section"
+            ref={ref}
+            style={{
+                transform: isInView ? "none" : "translateY(100px)",
+                opacity: isInView ? 1 : 0,
+                transition: "0.75s",
+            }}
+        >
             <OurServicesListSectionDataWrapper>
                 <OurServicesListSectionTextsAreaWrapper>
                     <OurServicesListSectionName>
