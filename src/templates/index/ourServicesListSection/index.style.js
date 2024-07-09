@@ -28,6 +28,7 @@ export const OurServicesListSectionDataWrapper = styled.div`
     gap: 25px;
     border-radius: 24px;
     background-color: #ffe0eb;
+    cursor: pointer;
 `
 export const OurServicesListSectionTextsAreaWrapper = styled.div`
     display: flex;

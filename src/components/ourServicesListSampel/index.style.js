@@ -10,10 +10,14 @@ export const OurServicesListSectionSampelWrapper = styled.div`
     height: fit-content;
     padding: 0;
     gap: 25px;
-
     @media ${theme.media.largeMobile} {
         flex-direction: column;
         gap: 10px;
+    }
+
+    &:hover button {
+        background-color: ${colors.primaryButtonHoverColor};
+        transition: 0.3s;
     }
 `
 
@@ -82,11 +86,6 @@ export const OurServicesListSectionSampelButton = styled.button`
     text-transform: capitalize;
     color: ${colors.primaryButtonTextColor};
     transition: 0.3s;
-
-    &:hover {
-        background-color: ${colors.primaryButtonHoverColor};
-        transition: 0.3s;
-    }
 `
 export const OurServicesListSectionSampelWholeItems = styled.div`
     display: flex;
