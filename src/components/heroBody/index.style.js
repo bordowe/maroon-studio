@@ -7,7 +7,7 @@ import { colors } from "../../styles/theme"
 export const HeroBodyWrapper = styled.div`
     @keyframes heroImageSlideFromLeft {
         0% {
-            transform: translateX(-200%);
+            transform: translateX(-100%);
         }
         100% {
             transform: translateX(0%);
@@ -15,7 +15,7 @@ export const HeroBodyWrapper = styled.div`
     }
     @keyframes heroTextSlideFromRight {
         0% {
-            transform: translateX(200%);
+            transform: translateX(100%);
         }
         100% {
             transform: translateX(0%);
@@ -25,7 +25,7 @@ export const HeroBodyWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: ${breakpoint.largeDesktop}px;
+    width: fit-content;
     height: fit-content;
     margin: 0 auto;
     padding: 64px 0;
@@ -45,7 +45,7 @@ export const HeroBodyImage = styled.div`
     width: 400px;
     aspect-ratio: 1;
     margin-right: 20px;
-    animation: heroImageSlideFromLeft 1s ease-in-out;
+    animation: heroImageSlideFromLeft 0.5s ease-in-out;
 
     @media ${theme.media.tablet} {
         width: 280px;
@@ -59,7 +59,7 @@ export const HeroBodyImage = styled.div`
 export const HeroContentWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    animation: heroTextSlideFromRight 1s ease-in-out;
+    animation: heroTextSlideFromRight 0.5s ease-in-out;
 
     @media ${theme.media.mobile} {
         width: 100%;
