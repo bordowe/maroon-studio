@@ -1,4 +1,6 @@
 import React from "react"
+import { motion } from "framer-motion"
+import { useInView } from "react-intersection-observer"
 
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
@@ -31,16 +33,55 @@ const HeroBody = () => {
             }
         }
     `)
+
+    const animQueueOptions = {
+        triggerOnce: true,
+    }
+    const [ref1, inView1] = useInView(animQueueOptions)
+    const [ref2, inView2] = useInView(animQueueOptions)
+
     return (
         <HeroBodyWrapper>
-            <HeroBodyImage>
+            <HeroBodyImage
+                as={motion.div}
+                ref={ref1}
+                initial={{
+                    x: 100,
+                    opacity: 0,
+                }}
+                animate={{
+                    x: inView1 ? 0 : 100,
+                    opacity: inView1 ? 1 : 0,
+                }}
+                transition={{
+                    type: "spring",
+                    stiffness: 200,
+                    damping: 20,
+                }}
+            >
                 <Img
                     fluid={imagesData.HeroSectionImage.childImageSharp.fluid}
                     alt="Woman cheking maroon-studio.com"
                     style={{ width: "100%", height: "100%" }}
                 />
             </HeroBodyImage>
-            <HeroContentWrapper>
+            <HeroContentWrapper
+                as={motion.div}
+                ref={ref2}
+                initial={{
+                    x: -100,
+                    opacity: 0,
+                }}
+                animate={{
+                    x: inView2 ? 0 : 100,
+                    opacity: inView2 ? 1 : 0,
+                }}
+                transition={{
+                    type: "spring",
+                    stiffness: 200,
+                    damping: 20,
+                }}
+            >
                 <HeroBodyTextArea>
                     <HeroBodyTextTopDescription>
                         real values digital agency
