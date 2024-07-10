@@ -73,7 +73,7 @@ const HeroBody = () => {
                     opacity: 0,
                 }}
                 animate={{
-                    x: inView2 ? 0 : 100,
+                    x: inView2 ? 0 : -100,
                     opacity: inView2 ? 1 : 0,
                 }}
                 transition={{
