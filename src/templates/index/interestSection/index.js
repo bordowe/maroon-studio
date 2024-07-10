@@ -1,4 +1,8 @@
 import React, { useState } from "react"
+
+import { motion } from "framer-motion"
+import { useInView } from "react-intersection-observer"
+
 import * as Yup from "yup"
 import axios from "axios"
 import { useFormik } from "formik"
@@ -58,11 +62,51 @@ const InterestSection = () => {
         },
     })
 
+    const animQueueOptions = {
+        triggerOnce: true,
+    }
+    const [ref1, inView1] = useInView(animQueueOptions)
+    const [ref2, inView2] = useInView(animQueueOptions)
+    const [ref3, inView3] = useInView(animQueueOptions)
+
     return (
-        <InterestSectionWrapper id="contact-section">
+        <InterestSectionWrapper
+            id="contact-section"
+            as={motion.div}
+            ref={ref1}
+            initial={{
+                y: 100,
+                opacity: 0,
+            }}
+            animate={{
+                y: inView1 ? 0 : 100,
+                opacity: inView1 ? 1 : 0,
+            }}
+            transition={{
+                type: "spring",
+                stiffness: 150,
+                damping: 20,
+            }}
+        >
             {!isSent ? (
                 <InterestSectionData>
-                    <InterestSectionLeftColumn>
+                    <InterestSectionLeftColumn
+                        as={motion.div}
+                        ref={ref2}
+                        initial={{
+                            x: 100,
+                            opacity: 0,
+                        }}
+                        animate={{
+                            x: inView2 ? 0 : 100,
+                            opacity: inView2 ? 1 : 0,
+                        }}
+                        transition={{
+                            type: "spring",
+                            stiffness: 150,
+                            damping: 20,
+                        }}
+                    >
                         <InterestSectionLeftColumnTitleSubtitleWrapper>
                             <InterestSectionLeftColumnTitle>
                                 Interested?
@@ -81,7 +125,23 @@ const InterestSection = () => {
                             {/* <WhatsappCommingSoonButton /> */}
                         </InterestSectionLeftColumnButtonsWrapper>
                     </InterestSectionLeftColumn>
-                    <InterestSectionRightColumn>
+                    <InterestSectionRightColumn
+                        as={motion.div}
+                        ref={ref3}
+                        initial={{
+                            x: -100,
+                            opacity: 0,
+                        }}
+                        animate={{
+                            x: inView3 ? 0 : -100,
+                            opacity: inView3 ? 1 : 0,
+                        }}
+                        transition={{
+                            type: "spring",
+                            stiffness: 150,
+                            damping: 20,
+                        }}
+                    >
                         <Form onSubmit={formik.handleSubmit}>
                             <InterestSectionRightColumnNameInput
                                 onBlur={formik.handleBlur}
