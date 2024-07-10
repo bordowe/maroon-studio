@@ -1,27 +1,9 @@
 import styled from "styled-components"
 
-import { breakpoint } from "../../styles/theme"
 import { theme } from "../../styles/theme"
 import { colors } from "../../styles/theme"
 
 export const HeroBodyWrapper = styled.div`
-    @keyframes heroImageSlideFromLeft {
-        0% {
-            transform: translateX(-100%);
-        }
-        100% {
-            transform: translateX(0%);
-        }
-    }
-    @keyframes heroTextSlideFromRight {
-        0% {
-            transform: translateX(100%);
-        }
-        100% {
-            transform: translateX(0%);
-        }
-    }
-
     display: flex;
     justify-content: center;
     align-items: center;
