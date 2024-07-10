@@ -1,6 +1,6 @@
 import React from "react"
-import { useRef } from "react"
-import { useInView } from "framer-motion"
+import { motion } from "framer-motion"
+import { useInView } from "react-intersection-observer"
 import {
     OurServicesListSectionDataWrapper,
     OurServicesListSectionTextsAreaWrapper,
@@ -14,16 +14,28 @@ import {
 import OurServicesListSectionSampel from "../../../components/ourServicesListSampel"
 
 const OurServicesListSection = () => {
-    const ref = useRef(null)
-    const isInView = useInView(ref, { once: true })
+    const animQueueOptions = {
+        triggerOnce: true,
+    }
+    const [ref1, inView1] = useInView(animQueueOptions)
+
     return (
         <OurServicesListSectionWrapper
             id="services-section"
-            ref={ref}
-            style={{
-                transform: isInView ? "none" : "translateY(100px)",
-                opacity: isInView ? 1 : 0,
-                transition: "0.75s",
+            as={motion.div}
+            ref={ref1}
+            initial={{
+                y: 100,
+                opacity: 0,
+            }}
+            animate={{
+                y: inView1 ? 0 : 100,
+                opacity: inView1 ? 1 : 0,
+            }}
+            transition={{
+                type: "spring",
+                stiffness: 150,
+                damping: 20,
             }}
         >
             <OurServicesListSectionDataWrapper>

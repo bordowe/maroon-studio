@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useEffect, useRef, useState } from "react"
+import { motion } from "framer-motion"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 import {
@@ -89,10 +90,67 @@ const OurServicesListSectionSampel = () => {
         },
     ]
 
+    const [inView, setInView] = useState({})
+    const refs = useRef([])
+
+    useEffect(() => {
+        refs.current = refs.current.slice(0, realValueSampelData.length)
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setInView((prev) => ({
+                            ...prev,
+                            [entry.target.id]: true,
+                        }))
+                    }
+                })
+            },
+            { threshold: 0.5 }
+        )
+
+        refs.current.forEach((ref) => {
+            if (ref) observer.observe(ref)
+        })
+
+        return () => {
+            refs.current.forEach((ref) => {
+                if (ref) observer.unobserve(ref)
+            })
+        }
+    })
+
     return (
         <>
-            {realValueSampelData.map((service) => (
-                <OurServicesListSectionSampelWrapper key={service.id}>
+            {realValueSampelData.map((service, index) => (
+                <OurServicesListSectionSampelWrapper
+                    key={service.id}
+                    as={motion.div}
+                    id={`section-${index}`}
+                    ref={(el) => (refs.current[index] = el)}
+                    initial={{
+                        x: index % 2 === 0 ? 100 : -100,
+                        opacity: 0,
+                    }}
+                    animate={{
+                        x: inView[`section-${index}`]
+                            ? 0
+                            : index % 2 === 0
+                            ? 100
+                            : -100,
+                        opacity: inView[`section-${index}`] ? 1 : 0,
+                    }}
+                    transition={{
+                        type: "spring",
+                        stiffness: 150,
+                        damping: 20,
+                    }}
+                    whileHover={{
+                        scale: 1.02,
+                        y: -10,
+                    }}
+                    whileTap={{ scale: 1 }}
+                >
                     <OurServicesListSectionSampelImageWrapper>
                         <Img
                             style={{
