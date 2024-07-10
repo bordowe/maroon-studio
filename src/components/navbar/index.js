@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from "react"
+import { useInView } from "react-intersection-observer"
+
 import { Link } from "gatsby"
 import { AnimatePresence, motion } from "framer-motion"
 import {
@@ -166,8 +168,29 @@ const Navbar = ({ onToggleSection }) => {
         }),
     }
 
+    const animQueueOptions = {
+        triggerOnce: true,
+    }
+    const [ref1, inView1] = useInView(animQueueOptions)
+
     return (
-        <NavbarWrapper>
+        <NavbarWrapper
+            as={motion.div}
+            ref={ref1}
+            initial={{
+                y: -100,
+                opacity: 0,
+            }}
+            animate={{
+                y: inView1 ? 0 : 100,
+                opacity: inView1 ? 1 : 0,
+            }}
+            transition={{
+                type: "spring",
+                stiffness: 100,
+                damping: 20,
+            }}
+        >
             <Link to="/">
                 <Logo />
             </Link>
