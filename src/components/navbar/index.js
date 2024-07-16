@@ -101,7 +101,7 @@ const Navbar = ({ onToggleSection }) => {
         }
     }, [])
 
-    const scrollToContact = (divId) => {
+    const scrollToSection = (divId) => {
         const id = document.getElementById(divId)
         if (id) {
             id.scrollIntoView({ behavior: "smooth" })
@@ -206,6 +206,7 @@ const Navbar = ({ onToggleSection }) => {
                                 if (name === "services") {
                                     event.preventDefault()
                                     handleServiceClick()
+                                    scrollToSection("services-section")
                                 }
                             }}
                             id={`${name}`}
@@ -217,11 +218,11 @@ const Navbar = ({ onToggleSection }) => {
                             }}
                         >
                             {name}{" "}
-                            {name === "services" && (
+                            {/* {name === "services" && (
                                 <NavbarExpandIcon isOpen={showServicesMenu} />
-                            )}
+                            )} */}
                         </a>
-                        <AnimatePresence>
+                        {/* <AnimatePresence>
                             {submenu &&
                                 name === "services" &&
                                 showServicesMenu && (
@@ -283,13 +284,13 @@ const Navbar = ({ onToggleSection }) => {
                                         )}
                                     </DropdownMenu>
                                 )}
-                        </AnimatePresence>
+                        </AnimatePresence> */}
                     </LinksWrapper>
                 ))}
             </LinksBar>
             <NavbarRightSection>
                 <NavbarButton
-                    onClick={() => scrollToContact("contact-section")}
+                    onClick={() => scrollToSection("contact-section")}
                 >
                     contact
                 </NavbarButton>
