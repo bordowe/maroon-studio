@@ -10,7 +10,9 @@ import {
     OurServicesListSectionSampelTitle,
     OurServicesListSectionSampelLore,
     OurServicesListSectionSampelWholeItems,
-    OurServicesListSectionSampelButton,
+    // OurServicesListSectionSampelButton,
+    OurServicesListSectionTagsWrapper,
+    OurServicesListSectionTag,
 } from "./index.style"
 
 const OurServicesListSectionSampel = () => {
@@ -63,6 +65,36 @@ const OurServicesListSectionSampel = () => {
             lore: "Our team designs and develops custom, responsive websites that are tailored to meet your specific business needs. Whether you require a sleek, modern e-commerce platform or a professional corporate site, we ensure that your online presence is both visually appealing and highly functional. Our websites are optimized for performance, ensuring fast loading times and seamless user experiences across all devices.",
             type: "services",
             buttonText: "Learn more",
+            tags: [
+                {
+                    id: 1,
+                    name: "landing page",
+                },
+                {
+                    id: 2,
+                    name: "e-commerce",
+                },
+                {
+                    id: 3,
+                    name: "website application",
+                },
+                {
+                    id: 4,
+                    name: "one page",
+                },
+                {
+                    id: 5,
+                    name: "multi page",
+                },
+                {
+                    id: 6,
+                    name: "blog",
+                },
+                {
+                    id: 7,
+                    name: "WordPress",
+                },
+            ],
         },
         {
             id: 2,
@@ -71,6 +103,28 @@ const OurServicesListSectionSampel = () => {
             lore: "Boost your visibility on search engines with our expert SEO strategies. We conduct comprehensive keyword research, optimize on-page elements, and build high-quality backlinks to improve your search engine rankings. Our approach is data-driven and tailored to your industry, helping you attract more organic traffic and convert visitors into loyal customers.",
             type: "services",
             buttonText: "Learn more",
+            tags: [
+                {
+                    id: 1,
+                    name: "SEO Audit",
+                },
+                {
+                    id: 2,
+                    name: "SEO Keywords",
+                },
+                {
+                    id: 3,
+                    name: "SEO Optimization",
+                },
+                {
+                    id: 4,
+                    name: "Link Building",
+                },
+                {
+                    id: 5,
+                    name: "Content Creation",
+                },
+            ],
         },
         {
             id: 3,
@@ -79,14 +133,50 @@ const OurServicesListSectionSampel = () => {
             lore: "Our comprehensive online marketing solutions are designed to grow your business by reaching the right audience at the right time. We create and manage targeted advertising campaigns across multiple platforms, including Google Ads, social media, and email marketing. By leveraging advanced analytics and A/B testing, we continuously optimize your campaigns for maximum ROI, ensuring that every marketing dollar is well spent.",
             type: "services",
             buttonText: "Learn more",
+            tags: [
+                {
+                    id: 1,
+                    name: "Research & Strategy",
+                },
+                {
+                    id: 2,
+                    name: "Ad Creation",
+                },
+                {
+                    id: 3,
+                    name: "Social Media Marketing",
+                },
+                {
+                    id: 4,
+                    name: "Search Engine Marketing",
+                },
+            ],
         },
         {
             id: 4,
             icon: data.SocialMediaManagementIcon.childImageSharp.fluid,
-            title: "Social media management",
+            title: "Social Media Management",
             lore: "Effective social media strategies to engage your audience and increase your reach. We handle everything from content creation and scheduling to community management and analytics. Our team crafts compelling posts, stories, and ads that resonate with your target audience, driving engagement and brand loyalty. Stay connected with your customers and build a vibrant online community with our social media management services.",
             type: "services",
-            buttonText: "Learn more",
+            buttonText: "Learn More",
+            tags: [
+                {
+                    id: 1,
+                    name: "Social Media Strategy",
+                },
+                {
+                    id: 2,
+                    name: "Content Creation & Planning",
+                },
+                {
+                    id: 3,
+                    name: "Content Managing & Publishing",
+                },
+                {
+                    id: 4,
+                    name: "Monitoring & Analysis",
+                },
+            ],
         },
     ]
 
@@ -118,7 +208,7 @@ const OurServicesListSectionSampel = () => {
                 if (ref) observer.unobserve(ref)
             })
         }
-    })
+    }, [realValueSampelData.length])
 
     return (
         <>
@@ -172,9 +262,16 @@ const OurServicesListSectionSampel = () => {
                             <OurServicesListSectionSampelLore>
                                 {service.lore}
                             </OurServicesListSectionSampelLore>
-                            <OurServicesListSectionSampelButton>
+                            <OurServicesListSectionTagsWrapper>
+                                {service.tags.map((tag) => (
+                                    <OurServicesListSectionTag key={tag.id}>
+                                        {tag.name}
+                                    </OurServicesListSectionTag>
+                                ))}
+                            </OurServicesListSectionTagsWrapper>
+                            {/* <OurServicesListSectionSampelButton>
                                 {service.buttonText}
-                            </OurServicesListSectionSampelButton>
+                            </OurServicesListSectionSampelButton> */}
                         </OurServicesListSectionSampelHeadersTextWrapper>
                     </OurServicesListSectionSampelWholeItems>
                 </OurServicesListSectionSampelWrapper>

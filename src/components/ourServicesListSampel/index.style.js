@@ -71,6 +71,25 @@ export const OurServicesListSectionSampelLore = styled.p`
     font-weight: 400;
     line-height: 16px;
 `
+export const OurServicesListSectionTagsWrapper = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: fit-content;
+    gap: 5px;
+`
+export const OurServicesListSectionTag = styled.div`
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 14px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: ${colors.tagBackgroundColor};
+`
 export const OurServicesListSectionSampelButton = styled.button`
     display: flex;
     justify-content: center;
