@@ -28,6 +28,7 @@ export const colors = {
     secondaryButtonColor: "#FFEFF5",
     primaryButtonHoverColor: "#36001C",
     secondaryButtonHoverColor: "#F7CDDC",
+    tagBackgroundColor: "#F7CDDC",
     sectionBackgroundColor: "#FFE0EB",
     secondarySectionBackgroundColor: "#73013C",
 }
