@@ -68,27 +68,27 @@ const OurServicesListSectionSampel = () => {
             tags: [
                 {
                     id: 1,
-                    name: "landing page",
+                    name: "Landing Page",
                 },
                 {
                     id: 2,
-                    name: "e-commerce",
+                    name: "E-commerce",
                 },
                 {
                     id: 3,
-                    name: "website application",
+                    name: "Website Application",
                 },
                 {
                     id: 4,
-                    name: "one page",
+                    name: "One Page",
                 },
                 {
                     id: 5,
-                    name: "multi page",
+                    name: "Multi Page",
                 },
                 {
                     id: 6,
-                    name: "blog",
+                    name: "Blog",
                 },
                 {
                     id: 7,
