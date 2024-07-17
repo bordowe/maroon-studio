@@ -87,19 +87,19 @@ const RealValueSampel = () => {
             title: "No-bullshit values",
             lore: "We believe in straightforward communication and honest dealings. No jargon, no empty promises, just real results.",
         },
-        {
-            id: 5,
-            icon: data.GreenBonusIcon.childImageSharp.fluid,
-            title: "Green Bonus",
-            lore: "We're committed to sustainability. Our digital solutions are designed to be eco-friendly, reducing the carbon footprint of your online presence.",
-        },
+        // {
+        //     id: 5,
+        //     icon: data.GreenBonusIcon.childImageSharp.fluid,
+        //     title: "Green Bonus",
+        //     lore: "We're committed to sustainability. Our digital solutions are designed to be eco-friendly, reducing the carbon footprint of your online presence.",
+        // },
     ]
 
     return (
         <RealValueSampelWrapper>
             <RealValueSampelDataFirstLine>
                 {realValueSampelData
-                    .slice(0, 3)
+                    .slice(0, 2)
                     .map(({ id, icon, title, lore }) => (
                         <RealValueSampelDataWrapper key={id}>
                             <RealValueSampelImageWrapper>
@@ -124,7 +124,7 @@ const RealValueSampel = () => {
             </RealValueSampelDataFirstLine>
             <RealValueSampelDataSecondLine>
                 {realValueSampelData
-                    .slice(3, 5)
+                    .slice(2, 5)
                     .map(({ id, icon, title, lore }) => (
                         <RealValueSampelDataWrapper key={id}>
                             <RealValueSampelImageWrapper>
