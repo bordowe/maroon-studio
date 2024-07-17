@@ -37,7 +37,7 @@ export const RealValueSampelDataFirstLine = styled.div`
     display: flex;
     width: 100%;
     height: fit-content;
-    justify-content: space-between;
+    justify-content: space-around;
 
     @media ${theme.media.largeMobile} {
         flex-direction: row;
