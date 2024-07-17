@@ -1,5 +1,8 @@
 import React from "react"
 
+import { useInView } from "react-intersection-observer"
+import { motion } from "framer-motion"
+
 import LogoFooter from "../../../components/footerLogo/index.js"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
@@ -50,6 +53,11 @@ const footerLinksData = [
 ]
 
 const Footer = () => {
+    const animQueueOptions = {
+        triggerOnce: true,
+    }
+    const [ref1, inView1] = useInView(animQueueOptions)
+
     const FooterIconsData = useStaticQuery(graphql`
         query {
             InstagramIcon: file(
@@ -148,7 +156,23 @@ const Footer = () => {
 
     return (
         <>
-            <FooterWrapper>
+            <FooterWrapper
+                as={motion.div}
+                ref={ref1}
+                initial={{
+                    y: 200,
+                    opacity: 0,
+                }}
+                animate={{
+                    y: inView1 ? 0 : 200,
+                    opacity: inView1 ? 1 : 0,
+                }}
+                transition={{
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 20,
+                }}
+            >
                 <FooterFirstLine>
                     <LogoFooter />
                     <SocialIconsWrapper>
