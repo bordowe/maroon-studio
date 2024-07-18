@@ -202,7 +202,7 @@ const Footer = () => {
                     </FooterLinksWrapper>
                     <FooterRightsReservedWrapper>
                         <FooterThermsPrivacyPolicyWrapper>
-                            <FooterTherms>therms</FooterTherms>
+                            <FooterTherms>terms</FooterTherms>
                             <FooterPrivacyPolicy>
                                 privacy policy
                             </FooterPrivacyPolicy>
