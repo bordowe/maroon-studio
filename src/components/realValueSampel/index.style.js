@@ -6,10 +6,10 @@ export const RealValueSampelWrapper = styled.div`
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-between;
+    align-items: center;
     width: 100%;
     height: fit-content;
-    gap: 10px;
+    gap: 50px;
     color: #73013c;
 
     @media ${theme.media.largeMobile} {
@@ -35,9 +35,9 @@ export const RealValueSampelDataWrapper = styled.div`
 `
 export const RealValueSampelDataFirstLine = styled.div`
     display: flex;
-    width: 100%;
+    width: fit-content;
+    gap: 50px;
     height: fit-content;
-    justify-content: space-around;
 
     @media ${theme.media.largeMobile} {
         flex-direction: row;
@@ -51,9 +51,9 @@ export const RealValueSampelDataFirstLine = styled.div`
 `
 export const RealValueSampelDataSecondLine = styled.div`
     display: flex;
-    width: 100%;
+    width: fit-content;
+    gap: 50px;
     height: fit-content;
-    justify-content: space-around;
 
     @media ${theme.media.largeMobile} {
         flex-direction: row;

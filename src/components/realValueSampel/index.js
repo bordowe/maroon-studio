@@ -1,4 +1,6 @@
 import React from "react"
+import { motion } from "framer-motion"
+import { useInView } from "react-intersection-observer"
 import Img from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
 import {
@@ -95,13 +97,48 @@ const RealValueSampel = () => {
         // },
     ]
 
+    const animQueueOptions = {
+        triggerOnce: true,
+    }
+    const [ref1, inView1] = useInView(animQueueOptions)
+    const [ref2, inView2] = useInView(animQueueOptions)
+    const [ref3, inView3] = useInView(animQueueOptions)
+    const [ref4, inView4] = useInView(animQueueOptions)
+
     return (
         <RealValueSampelWrapper>
             <RealValueSampelDataFirstLine>
                 {realValueSampelData
                     .slice(0, 2)
-                    .map(({ id, icon, title, lore }) => (
-                        <RealValueSampelDataWrapper key={id}>
+                    .map(({ id, icon, title, lore }, index) => (
+                        <RealValueSampelDataWrapper
+                            key={id}
+                            as={motion.div}
+                            ref={index === 0 ? ref1 : ref2}
+                            initial={{
+                                x: index === 0 ? 100 : -100,
+                                opacity: 0,
+                            }}
+                            animate={{
+                                x:
+                                    (index === 0 && inView1) ||
+                                    (index === 1 && inView2)
+                                        ? 0
+                                        : index === 0
+                                        ? 100
+                                        : -100,
+                                opacity:
+                                    (index === 0 && inView1) ||
+                                    (index === 1 && inView2)
+                                        ? 1
+                                        : 0,
+                            }}
+                            transition={{
+                                type: "spring",
+                                stiffness: 200,
+                                damping: 20,
+                            }}
+                        >
                             <RealValueSampelImageWrapper>
                                 <Img
                                     fluid={icon}
@@ -125,8 +162,35 @@ const RealValueSampel = () => {
             <RealValueSampelDataSecondLine>
                 {realValueSampelData
                     .slice(2, 5)
-                    .map(({ id, icon, title, lore }) => (
-                        <RealValueSampelDataWrapper key={id}>
+                    .map(({ id, icon, title, lore }, index) => (
+                        <RealValueSampelDataWrapper
+                            key={id}
+                            as={motion.div}
+                            ref={index === 0 ? ref3 : ref4}
+                            initial={{
+                                x: index === 0 ? 100 : -100,
+                                opacity: 0,
+                            }}
+                            animate={{
+                                x:
+                                    (index === 0 && inView3) ||
+                                    (index === 1 && inView4)
+                                        ? 0
+                                        : index === 0
+                                        ? 100
+                                        : -100,
+                                opacity:
+                                    (index === 0 && inView3) ||
+                                    (index === 1 && inView4)
+                                        ? 1
+                                        : 0,
+                            }}
+                            transition={{
+                                type: "spring",
+                                stiffness: 200,
+                                damping: 20,
+                            }}
+                        >
                             <RealValueSampelImageWrapper>
                                 <Img
                                     fluid={icon}
