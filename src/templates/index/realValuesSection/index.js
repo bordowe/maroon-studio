@@ -1,5 +1,6 @@
 import React from "react"
-
+import { motion } from "framer-motion"
+import { useInView } from "react-intersection-observer"
 import {
     RealValuesSectionWrapper,
     RealValuesSectionTitleTexts,
@@ -11,9 +12,30 @@ import {
 import RealValueSampel from "../../../components/realValueSampel"
 
 const RealValuesSection = () => {
+    const animQueueOptions = {
+        triggerOnce: true,
+    }
+    const [ref1, inView1] = useInView(animQueueOptions)
+
     return (
         <RealValuesSectionWrapper>
-            <RealValuesSectionTitleTexts>
+            <RealValuesSectionTitleTexts
+                as={motion.div}
+                ref={ref1}
+                initial={{
+                    y: 100,
+                    opacity: 0,
+                }}
+                animate={{
+                    y: inView1 ? 0 : 100,
+                    opacity: inView1 ? 1 : 0,
+                }}
+                transition={{
+                    type: "spring",
+                    stiffness: 150,
+                    damping: 20,
+                }}
+            >
                 <RealValuesSectionTitle>Real values</RealValuesSectionTitle>
                 <RealValuesSectionSubtitle>
                     Are you tired of the clapped-out values of other agencies?
