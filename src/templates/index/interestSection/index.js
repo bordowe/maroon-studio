@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import ReactGA from "react-ga4"
 
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
@@ -30,6 +31,14 @@ import ContactViaEmailButton from "../../../components/contactViaEmailButton"
 import WhatsappCommingSoonButton from "../../../components/whatsappCommingSoonButton"
 import ContactSuccessSendText from "../../../components/contactSuccessSendText"
 
+const handleContactFormClick = () => {
+    ReactGA.event({
+        category: "Email",
+        action: "Click",
+        label: "Contact Form Button",
+    })
+}
+
 const InterestSection = () => {
     const [isSent, setIsSent] = useState(false)
 
@@ -45,7 +54,7 @@ const InterestSection = () => {
                 .required("This field is required"),
             message: Yup.string().required("This field is required"),
         }),
-        onSubmit: async (values) => {
+        onSubmit: async (values, { setSubmitting }) => {
             try {
                 await axios.post(
                     "https://mtzqdrv456.execute-api.eu-north-1.amazonaws.com/dev/contact",
@@ -53,12 +62,14 @@ const InterestSection = () => {
                         name: values.name,
                         email: values.email,
                         message: values.message,
-                    },
-                    setIsSent(true)
+                    }
                 )
+                setIsSent(true)
+                handleContactFormClick()
             } catch (error) {
                 console.error("Error: ", error)
             }
+            setSubmitting(false)
         },
     })
 
