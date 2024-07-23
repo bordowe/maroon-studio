@@ -1,6 +1,5 @@
 import styled from "styled-components"
-
-import { breakpoint } from "../../../styles/theme"
+import { breakpoint, colors } from "../../../styles/theme"
 import { theme } from "../../../styles/theme"
 
 export const FooterWrapper = styled.div`
@@ -51,6 +50,7 @@ export const SocialIconsWrapper = styled.div`
         gap: 0;
     }
 `
+
 export const FooterIconsWrapper = styled.div`
     display: none;
     width: fit-content;
@@ -58,6 +58,7 @@ export const FooterIconsWrapper = styled.div`
     background-repeat: no-repeat;
     background-size: contain;
 `
+
 export const FooterSecondLine = styled.div`
     display: flex;
     width: 100%;
@@ -73,6 +74,7 @@ export const FooterSecondLine = styled.div`
         gap: 25px;
     }
 `
+
 export const FooterLinksWrapper = styled.div`
     display: flex;
     width: fit-content;
@@ -88,12 +90,37 @@ export const FooterLinksWrapper = styled.div`
         margin-left: 0;
         gap: 15px;
     }
+
+    & > div:nth-child(2) div,
+    & > div:nth-child(3) div {
+        position: relative;
+
+        &::after {
+            margin-top: -15px;
+            left: 0px;
+            position: absolute;
+            content: "Soon";
+            width: fit-content;
+            height: fit-content;
+            background-color: ${colors.tagBackgroundColor};
+            color: ${colors.primaryTextColor};
+            padding: 3px;
+            border-radius: 10px;
+            font-size: 10px;
+            font-style: italic;
+            font-weight: 500;
+            line-height: 10px;
+            text-align: center;
+        }
+    }
 `
+
 export const FooterIcon = styled.div`
     display: flex;
     width: 25px;
     aspect-ratio: 1;
 `
+
 export const FooterLink = styled.div`
     display: flex;
     width: fit-content;
@@ -106,6 +133,19 @@ export const FooterLink = styled.div`
         text-decoration: none;
     }
 `
+
+export const FooterLinkButton = styled.div`
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #73013c;
+    text-decoration: none;
+    cursor: pointer;
+`
+
 export const FooterRightsReservedWrapper = styled.div`
     display: flex;
     width: fit-content;
@@ -126,12 +166,14 @@ export const FooterRightsReservedWrapper = styled.div`
         gap: 15px;
     }
 `
+
 export const FooterThermsPrivacyPolicyWrapper = styled.div`
     display: flex;
     width: fit-content;
     height: fit-content;
     gap: 10px;
 `
+
 export const FooterTherms = styled.div`
     display: flex;
     width: fit-content;
@@ -141,6 +183,7 @@ export const FooterTherms = styled.div`
     line-height: 14px;
     text-transform: capitalize;
 `
+
 export const FooterPrivacyPolicy = styled.div`
     display: flex;
     width: fit-content;
@@ -150,6 +193,7 @@ export const FooterPrivacyPolicy = styled.div`
     line-height: 14px;
     text-transform: capitalize;
 `
+
 export const FooterRightsReserved = styled.div`
     font-size: 14px;
     font-weight: 400;
