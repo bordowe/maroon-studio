@@ -30,18 +30,50 @@ export const LinksBar = styled.div`
         display: none;
     }
 
-    a {
-        color: #73013c;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        padding: 10px;
-        border-radius: 5px;
+    & > div:nth-child(2) div,
+    & > div:nth-child(3) div {
         position: relative;
-        overflow: hidden;
-    }
 
-    a::before {
+        &::after {
+            margin-top: -35px;
+            left: 10px;
+            position: absolute;
+            content: "Soon";
+            width: fit-content;
+            height: fit-content;
+            background-color: ${colors.tagBackgroundColor};
+            color: ${colors.primaryTextColor};
+            padding: 3px;
+            border-radius: 10px;
+            font-size: 10px;
+            font-style: italic;
+            font-weight: 500;
+            line-height: 10px;
+            text-align: center;
+        }
+    }
+`
+
+export const NavbarLinkButton = styled.div`
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #73013c;
+    text-decoration: none;
+    cursor: pointer;
+    color: #73013c;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+    overflow: visible;
+
+    &::before {
         content: "";
         position: absolute;
         top: 0;
@@ -53,13 +85,14 @@ export const LinksBar = styled.div`
         transform-origin: left;
         transition: transform 0.3s ease-in-out;
         z-index: -1;
+        border-radius: 5px;
     }
 
-    a:hover::before {
+    &:hover::before {
         transform: scaleX(1);
     }
 
-    a:nth-child(1) {
+    &:nth-child(1) {
         gap: 5px;
     }
 `
