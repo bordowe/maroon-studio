@@ -13,6 +13,7 @@ import {
     DropdownItemIcon,
     DropdownItemTitle,
     DropdownItemSubtitle,
+    NavbarLinkButton,
 } from "./index.style"
 
 import NavbarExpandIcon from "../expandIcon"
@@ -27,7 +28,7 @@ const navbarLinks = [
     {
         id: 1,
         name: "services",
-        link: "#",
+        link: "services-section",
         submenu: [
             {
                 id: 1,
@@ -76,7 +77,7 @@ const navbarLinks = [
     {
         id: 4,
         name: "about us",
-        link: "/about-us",
+        link: "real-values-section",
     },
 ]
 
@@ -200,28 +201,28 @@ const Navbar = ({ onToggleSection }) => {
                         key={id}
                         ref={submenu && name === "services" ? menuRef : null}
                     >
-                        <a
-                            href={link}
+                        <NavbarLinkButton
                             onClick={(event) => {
                                 if (name === "services") {
                                     event.preventDefault()
                                     handleServiceClick()
-                                    scrollToSection("services-section")
+                                    scrollToSection(link)
+                                } else if (name === "about us") {
+                                    scrollToSection(link)
                                 }
                             }}
                             id={`${name}`}
                             style={{
-                                textDecoration:
-                                    index === 1 || index === 2 || index === 3
-                                        ? "line-through"
-                                        : "none",
+                                opacity: id === 2 || id === 3 ? 0.5 : 1,
+                                pointerEvents:
+                                    id === 2 || id === 3 ? "none" : "auto",
                             }}
                         >
                             {name}{" "}
                             {/* {name === "services" && (
                                 <NavbarExpandIcon isOpen={showServicesMenu} />
                             )} */}
-                        </a>
+                        </NavbarLinkButton>
                         {/* <AnimatePresence>
                             {submenu &&
                                 name === "services" &&
