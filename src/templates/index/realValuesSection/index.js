@@ -18,7 +18,7 @@ const RealValuesSection = () => {
     const [ref1, inView1] = useInView(animQueueOptions)
 
     return (
-        <RealValuesSectionWrapper>
+        <RealValuesSectionWrapper id="real-values-section">
             <RealValuesSectionTitleTexts
                 as={motion.div}
                 ref={ref1}

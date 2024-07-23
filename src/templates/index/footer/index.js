@@ -1,15 +1,13 @@
 import React from "react"
-
 import { useInView } from "react-intersection-observer"
 import { motion } from "framer-motion"
-
 import LogoFooter from "../../../components/footerLogo/index.js"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
-
 import {
     FooterIcon,
     FooterLink,
+    FooterLinkButton,
     FooterLinksWrapper,
     FooterPrivacyPolicy,
     FooterRightsReserved,
@@ -19,7 +17,6 @@ import {
     FooterThermsPrivacyPolicyWrapper,
     SocialIconsWrapper,
 } from "./index.style"
-
 import { FooterIconsWrapper } from "./index.style"
 import { FooterWrapper } from "./index.style"
 import { FooterFirstLine } from "./index.style"
@@ -27,28 +24,28 @@ import { FooterFirstLine } from "./index.style"
 const footerLinksData = [
     {
         id: 1,
-        name: "Serivces",
-        link: "#",
+        name: "Services",
+        link: "services-section",
     },
     {
         id: 2,
         name: "Blog",
-        link: "#",
+        link: "blog-section",
     },
     {
         id: 3,
-        name: "Projects",
-        link: "#",
+        name: "Case Studies",
+        link: "casestudies-section",
     },
     {
         id: 4,
         name: "About us",
-        link: "#",
+        link: "real-values-section",
     },
     {
         id: 5,
         name: "Contact",
-        link: "#",
+        link: "contact-section",
     },
 ]
 
@@ -154,6 +151,13 @@ const Footer = () => {
         },
     ]
 
+    const scrollToSection = (id) => {
+        const element = document.getElementById(id)
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth" })
+        }
+    }
+
     return (
         <>
             <FooterWrapper
@@ -195,8 +199,19 @@ const Footer = () => {
                 <FooterSecondLine>
                     <FooterLinksWrapper>
                         {footerLinksData.map(({ id, name, link }) => (
-                            <FooterLink key={id}>
-                                <a href={link}>{name}</a>
+                            <FooterLink
+                                key={id}
+                                style={{
+                                    opacity: id === 2 || id === 3 ? 0.5 : 1,
+                                    pointerEvents:
+                                        id === 2 || id === 3 ? "none" : "auto",
+                                }}
+                            >
+                                <FooterLinkButton
+                                    onClick={() => scrollToSection(link)}
+                                >
+                                    {name}
+                                </FooterLinkButton>
                             </FooterLink>
                         ))}
                     </FooterLinksWrapper>
