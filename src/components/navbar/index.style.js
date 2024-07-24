@@ -36,7 +36,7 @@ export const LinksBar = styled.div`
 
         &::after {
             margin-top: -35px;
-            left: 10px;
+            right: -5px;
             position: absolute;
             content: "Soon";
             width: fit-content;
