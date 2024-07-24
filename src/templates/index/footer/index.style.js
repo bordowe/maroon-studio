@@ -96,8 +96,8 @@ export const FooterLinksWrapper = styled.div`
         position: relative;
 
         &::after {
-            margin-top: -15px;
-            left: 0px;
+            margin-top: -18px;
+            right: -15px;
             position: absolute;
             content: "Soon";
             width: fit-content;
