@@ -12,13 +12,13 @@ const PageNotFoundTemplate = () => {
     return (
         <PageNotFoundWrapper>
             <PageNotFoundTitle>404</PageNotFoundTitle>
-            <PageNotFoundSubtitle>Page not found</PageNotFoundSubtitle>
+            <PageNotFoundSubtitle>Strona nie znaleziona</PageNotFoundSubtitle>
             <PageNotFoundInfoText>
-                Sorry! We couldn’t find the page you were looking for. But you
-                can always check out what we have to offer 😉.
+                Przepraszamy! Nie znaleźliśmy strony, której szukałeś. Ale
+                zawsze możesz sprawdzić, co mamy do zaoferowania 😉.
             </PageNotFoundInfoText>
             <Link to="/" style={{ textDecoration: "none" }}>
-                <PageNotFoundButton>Back to home</PageNotFoundButton>
+                <PageNotFoundButton>Wróć na stronę główną</PageNotFoundButton>
             </Link>
         </PageNotFoundWrapper>
     )
