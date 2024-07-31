@@ -295,7 +295,7 @@ const Navbar = ({ onToggleSection }) => {
                 >
                     contact
                 </NavbarButton>
-                <HamburgerMenu onToggleSection={onToggleSection} />
+                {/* <HamburgerMenu onToggleSection={onToggleSection} /> */}
             </NavbarRightSection>
         </NavbarWrapper>
     )
