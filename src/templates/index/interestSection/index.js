@@ -120,16 +120,16 @@ const InterestSection = () => {
                     >
                         <InterestSectionLeftColumnTitleSubtitleWrapper>
                             <InterestSectionLeftColumnTitle>
-                                Interested?
+                                Zainteresowany?
                             </InterestSectionLeftColumnTitle>
                             <InterestSectionLeftColumnSubtitle>
-                                Write, in an hour you will get an answer!
+                                Napisz, za godzinę dostaniesz odpowiedź!
                             </InterestSectionLeftColumnSubtitle>
                         </InterestSectionLeftColumnTitleSubtitleWrapper>
                         <InterestSectionLeftColumnLore>
-                            On Internet marketing, creating websites, running
-                            social media, etc... You don't need to know about
-                            it, leave it to us!
+                            Nie musisz się na tym znać na marketingu
+                            internetowym, tworzeniu stron internetowych oraz
+                            prowadzeniu mediów społecznościowych. Zostaw to nam!
                         </InterestSectionLeftColumnLore>
                         <InterestSectionLeftColumnButtonsWrapper>
                             <ContactViaEmailButton />
@@ -159,7 +159,7 @@ const InterestSection = () => {
                                 name="name"
                                 id="name"
                                 type="text"
-                                placeholder="Name"
+                                placeholder="Imię"
                                 value={formik.values.name}
                                 onChange={formik.handleChange}
                                 autoComplete="name"
@@ -182,7 +182,7 @@ const InterestSection = () => {
                                 name="message"
                                 id="message"
                                 type="text"
-                                placeholder="Message*"
+                                placeholder="Wiadomość*"
                                 value={formik.values.message}
                                 onChange={formik.handleChange}
                             />
@@ -191,13 +191,13 @@ const InterestSection = () => {
                             ) : null}
                             <InterestSectionRightColumnFooter>
                                 <InterestSectionPrivacyPolicy>
-                                    Your data will be processed by Maroon
-                                    Studio, in accordance with its Privacy
-                                    Policy and Cookies Policy, for the purpose
-                                    of handling the contact form.
+                                    Twoje dane będą przetwarzane przez Studio
+                                    Bordowe zgodnie z Polityką Prywatności i
+                                    Polityką Cookies w celu obsługi formularza
+                                    kontaktowego.
                                 </InterestSectionPrivacyPolicy>
                                 <InterestSectionSendFormButton type="submit">
-                                    Send
+                                    Wyślij
                                 </InterestSectionSendFormButton>
                             </InterestSectionRightColumnFooter>
                         </Form>

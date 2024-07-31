@@ -40,7 +40,8 @@ const Layout = (props) => {
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>
-                    Maroon Studio {locationGet === "" ? "" : `- ${locationGet}`}
+                    Studio Bordowe{" "}
+                    {locationGet === "" ? "" : `- ${locationGet}`}
                 </title>
                 <link rel="cannonical" href={originlocationGet} />
             </Helmet>

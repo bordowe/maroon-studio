@@ -84,15 +84,15 @@ const HeroBody = () => {
             >
                 <HeroBodyTextArea>
                     <HeroBodyTextTopDescription>
-                        real values digital agency
+                        agencja digitalowa z prawdziwymi wartościami
                     </HeroBodyTextTopDescription>
-                    <HeroBodyTextTitle>maroon studio</HeroBodyTextTitle>
+                    <HeroBodyTextTitle>studio bordowe</HeroBodyTextTitle>
                     <HeroBodyTextSubtitle>
-                        Your goal, our mutual success
+                        Twój cel, nasz wspólny sukces
                     </HeroBodyTextSubtitle>
                     <HeroBodyTextBottomDescription>
-                        A digital agency in which the most important factor for
-                        success is the values we uphold.
+                        Agencja cyfrowa, w której najważniejszym czynnikiem
+                        sukcesu są wartości, które wyznajemy.
                     </HeroBodyTextBottomDescription>
                 </HeroBodyTextArea>
                 <HeroButtonWrapper>

@@ -41,16 +41,16 @@ const OurServicesListSection = () => {
             <OurServicesListSectionDataWrapper>
                 <OurServicesListSectionTextsAreaWrapper>
                     <OurServicesListSectionName>
-                        Our services list
+                        lista naszych usług
                     </OurServicesListSectionName>
                     <OurServicesListSectionTitle>
-                        Everything you need to increase sales
+                        Wszystko, czego potrzebujesz, aby zwiększyć sprzedaż
                     </OurServicesListSectionTitle>
                     <OurServicesListSectionSubtitle>
-                        With us, you don't need to know about technical matters
-                        or professional nomenclature. Just choose what you think
-                        you need, and we will take care of selecting the right
-                        technology, etc.
+                        U nas nie musisz znać się na kwestiach technicznych ani
+                        na fachowej nomenklaturze. Po prostu wybierz to, czego
+                        uważasz, że potrzebujesz, a my zajmiemy się wyborem
+                        odpowiedniej technologii.
                     </OurServicesListSectionSubtitle>
                 </OurServicesListSectionTextsAreaWrapper>
                 <OurServicesListSectionSampelsWrapper>

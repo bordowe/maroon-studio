@@ -27,7 +27,7 @@ import Img from "gatsby-image"
 const navbarLinks = [
     {
         id: 1,
-        name: "services",
+        name: "usługi",
         link: "services-section",
         submenu: [
             {
@@ -76,7 +76,7 @@ const navbarLinks = [
     },
     {
         id: 4,
-        name: "about us",
+        name: "o nas",
         link: "real-values-section",
     },
 ]
@@ -199,15 +199,15 @@ const Navbar = ({ onToggleSection }) => {
                 {navbarLinks.map(({ id, name, link, submenu }, index) => (
                     <LinksWrapper
                         key={id}
-                        ref={submenu && name === "services" ? menuRef : null}
+                        ref={submenu && name === "usługi" ? menuRef : null}
                     >
                         <NavbarLinkButton
                             onClick={(event) => {
-                                if (name === "services") {
+                                if (name === "usługi") {
                                     event.preventDefault()
                                     handleServiceClick()
                                     scrollToSection(link)
-                                } else if (name === "about us") {
+                                } else if (name === "o nas") {
                                     scrollToSection(link)
                                 }
                             }}
@@ -293,7 +293,7 @@ const Navbar = ({ onToggleSection }) => {
                 <NavbarButton
                     onClick={() => scrollToSection("contact-section")}
                 >
-                    contact
+                    kontakt
                 </NavbarButton>
                 {/* <HamburgerMenu onToggleSection={onToggleSection} /> */}
             </NavbarRightSection>

@@ -24,7 +24,7 @@ import { FooterFirstLine } from "./index.style"
 const footerLinksData = [
     {
         id: 1,
-        name: "Services",
+        name: "Usługi",
         link: "services-section",
     },
     {
@@ -39,12 +39,12 @@ const footerLinksData = [
     },
     {
         id: 4,
-        name: "About us",
+        name: "O Nas",
         link: "real-values-section",
     },
     {
         id: 5,
-        name: "Contact",
+        name: "Kontakt",
         link: "contact-section",
     },
 ]
@@ -217,13 +217,13 @@ const Footer = () => {
                     </FooterLinksWrapper>
                     <FooterRightsReservedWrapper>
                         <FooterThermsPrivacyPolicyWrapper>
-                            <FooterTherms>terms</FooterTherms>
+                            <FooterTherms>Warunki</FooterTherms>
                             <FooterPrivacyPolicy>
-                                privacy policy
+                                Polityka Prywatności
                             </FooterPrivacyPolicy>
                         </FooterThermsPrivacyPolicyWrapper>
                         <FooterRightsReserved>
-                            © 2024 Maroon, All rights reserved.
+                            © 2024 Studio Bordowe, Wszelkie prawa zastrzeżone.
                         </FooterRightsReserved>
                     </FooterRightsReservedWrapper>
                 </FooterSecondLine>

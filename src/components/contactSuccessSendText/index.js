@@ -8,9 +8,9 @@ import {
 const ContactSuccessSendText = () => {
     return (
         <SuccessSendTextWrapper>
-            <SuccessSendTextTitle>Thank you!</SuccessSendTextTitle>
+            <SuccessSendTextTitle>Dziękujemy!</SuccessSendTextTitle>
             <SuccessSendTextSubtitle>
-                We will contact you as soon as possible
+                Skontaktujemy się z Tobą najszybciej, jak to możliwe.
             </SuccessSendTextSubtitle>
         </SuccessSendTextWrapper>
     )

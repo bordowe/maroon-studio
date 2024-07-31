@@ -24,10 +24,10 @@ const ContactViaEmailButton = () => {
         >
             <InterestSectionLeftColumnEmailButton>
                 <InterestSectionLeftColumnEmailButtonTitle>
-                    Via Email
+                    Poprzez E-mail
                 </InterestSectionLeftColumnEmailButtonTitle>
                 <InterestSectionLeftColumnEmailButtonSubtitle>
-                    Get free quote
+                    Uzyskaj darmową wycenę
                 </InterestSectionLeftColumnEmailButtonSubtitle>
             </InterestSectionLeftColumnEmailButton>
         </a>

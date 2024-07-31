@@ -11,7 +11,7 @@ const Logo = () => {
                 relativePath: { eq: "maroonStudio-logo.png" }
             ) {
                 childImageSharp {
-                    fluid(maxHeight: 28, maxWidth: 70) {
+                    fluid(maxHeight: 30, maxWidth: 80) {
                         ...GatsbyImageSharpFluid
                     }
                 }
@@ -25,8 +25,8 @@ const Logo = () => {
                 fluid={imagesData.WebsitesServiceIcon.childImageSharp.fluid}
                 alt="Maroon Studio Logo"
                 style={{
-                    width: "70px",
-                    height: "28px",
+                    width: "80px",
+                    height: "30px",
                 }}
             />
         </LogoNavbar>

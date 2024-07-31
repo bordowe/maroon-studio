@@ -17,12 +17,12 @@ const HeroBodyButtons = () => {
     return (
         <>
             <FreeQuoteButton onClick={() => scrollToContact("contact-section")}>
-                Free quote
+                Darmowa Wycena
             </FreeQuoteButton>
             <OurServicesButton
                 onClick={() => scrollToServices("services-section")}
             >
-                Our services
+                Nasze Usługi
             </OurServicesButton>
         </>
     )

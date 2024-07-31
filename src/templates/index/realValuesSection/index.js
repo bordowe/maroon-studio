@@ -36,11 +36,13 @@ const RealValuesSection = () => {
                     damping: 20,
                 }}
             >
-                <RealValuesSectionTitle>Real values</RealValuesSectionTitle>
+                <RealValuesSectionTitle>
+                    Rzeczywiste Wartości
+                </RealValuesSectionTitle>
                 <RealValuesSectionSubtitle>
-                    Are you tired of the clapped-out values of other agencies?
-                    With us, you'll only find ones you can realistically benefit
-                    from!
+                    Czy jesteś zmęczony wyeksploatowanymi wartościami innych
+                    agencji? U nas znajdziesz tylko takie, z których możesz
+                    realnie skorzystać!
                 </RealValuesSectionSubtitle>
             </RealValuesSectionTitleTexts>
             <ValuesWrapper>

@@ -61,10 +61,10 @@ const OurServicesListSectionSampel = () => {
         {
             id: 1,
             icon: data.WebsitesIcon.childImageSharp.fluid,
-            title: "Websites",
-            lore: "Our team designs and develops custom, responsive websites that are tailored to meet your specific business needs. Whether you require a sleek, modern e-commerce platform or a professional corporate site, we ensure that your online presence is both visually appealing and highly functional. Our websites are optimized for performance, ensuring fast loading times and seamless user experiences across all devices.",
-            type: "services",
-            buttonText: "Learn more",
+            title: "Strony Internetowe",
+            lore: "Nasz zespół projektuje i rozwija niestandardowe, responsywne strony internetowe, które są dostosowane do konkretnych potrzeb Twojej firmy. Niezależnie od tego, czy potrzebujesz eleganckiej, nowoczesnej platformy e-commerce, czy profesjonalnej witryny korporacyjnej, zapewniamy, że Twoja obecność online jest zarówno atrakcyjna wizualnie, jak i wysoce funkcjonalna. Nasze strony internetowe są zoptymalizowane pod kątem wydajności, zapewniając szybkie czasy ładowania i bezproblemowe doświadczenia użytkownika na wszystkich urządzeniach.",
+            type: "usługi",
+            buttonText: "Dowiedz się więcej",
             tags: [
                 {
                     id: 1,
@@ -76,7 +76,7 @@ const OurServicesListSectionSampel = () => {
                 },
                 {
                     id: 3,
-                    name: "Website Application",
+                    name: "Aplikacja Internetowa",
                 },
                 {
                     id: 4,
@@ -100,21 +100,21 @@ const OurServicesListSectionSampel = () => {
             id: 2,
             icon: data.SeoIcon.childImageSharp.fluid,
             title: "SEO",
-            lore: "Boost your visibility on search engines with our expert SEO strategies. We conduct comprehensive keyword research, optimize on-page elements, and build high-quality backlinks to improve your search engine rankings. Our approach is data-driven and tailored to your industry, helping you attract more organic traffic and convert visitors into loyal customers.",
-            type: "services",
-            buttonText: "Learn more",
+            lore: "Zwiększ swoją widoczność w wyszukiwarkach dzięki naszym eksperckim strategiom SEO. Przeprowadzamy kompleksowe badania słów kluczowych, optymalizujemy elementy na stronie i budujemy wysokiej jakości linki zwrotne, aby poprawić pozycję w wyszukiwarkach. Nasze podejście opiera się na danych i jest dostosowane do Twojej branży, pomagając Ci przyciągnąć więcej ruchu organicznego i przekształcić odwiedzających w lojalnych klientów.",
+            type: "usługi",
+            buttonText: "Dowiedz się więcej",
             tags: [
                 {
                     id: 1,
-                    name: "SEO Audit",
+                    name: "Audyt SEO",
                 },
                 {
                     id: 2,
-                    name: "SEO Keywords",
+                    name: "Słowa Kluczowe",
                 },
                 {
                     id: 3,
-                    name: "SEO Optimization",
+                    name: "Optymalizacja SEO",
                 },
                 {
                     id: 4,
@@ -122,59 +122,59 @@ const OurServicesListSectionSampel = () => {
                 },
                 {
                     id: 5,
-                    name: "Content Creation",
+                    name: "Tworzenie Treści",
                 },
             ],
         },
         {
             id: 3,
             icon: data.OnlineMarketingIcon.childImageSharp.fluid,
-            title: "Online marketing",
-            lore: "Our comprehensive online marketing solutions are designed to grow your business by reaching the right audience at the right time. We create and manage targeted advertising campaigns across multiple platforms, including Google Ads, social media, and email marketing. By leveraging advanced analytics and A/B testing, we continuously optimize your campaigns for maximum ROI, ensuring that every marketing dollar is well spent.",
-            type: "services",
-            buttonText: "Learn more",
+            title: "Marketing online",
+            lore: "Nasze kompleksowe rozwiązania marketingu internetowego są zaprojektowane tak, aby rozwijać Twój biznes poprzez dotarcie do właściwej grupy odbiorców we właściwym czasie. Tworzymy i zarządzamy ukierunkowanymi kampaniami reklamowymi na wielu platformach, w tym Google Ads, mediach społecznościowych i marketingu e-mailowym. Wykorzystując zaawansowaną analitykę i testy A/B, nieustannie optymalizujemy Twoje kampanie w celu uzyskania maksymalnego zwrotu z inwestycji, zapewniając, że każda złotówka marketingowa jest dobrze wydana.",
+            type: "usługi",
+            buttonText: "Dowiedz się więcej",
             tags: [
                 {
                     id: 1,
-                    name: "Research & Strategy",
+                    name: "Badania i Strategia",
                 },
                 {
                     id: 2,
-                    name: "Ad Creation",
+                    name: "Tworzenie Treści",
                 },
                 {
                     id: 3,
-                    name: "Social Media Marketing",
+                    name: "Marketing Mediów Społecznościowych",
                 },
                 {
                     id: 4,
-                    name: "Search Engine Marketing",
+                    name: "Marketing w Wyszukiwarkach",
                 },
             ],
         },
         {
             id: 4,
             icon: data.SocialMediaManagementIcon.childImageSharp.fluid,
-            title: "Social Media Management",
-            lore: "Effective social media strategies to engage your audience and increase your reach. We handle everything from content creation and scheduling to community management and analytics. Our team crafts compelling posts, stories, and ads that resonate with your target audience, driving engagement and brand loyalty. Stay connected with your customers and build a vibrant online community with our social media management services.",
-            type: "services",
-            buttonText: "Learn More",
+            title: "Zarządzanie Mediami Społecznościowymi",
+            lore: "Skuteczne strategie mediów społecznościowych, które angażują odbiorców i zwiększają zasięg. Zajmujemy się wszystkim, od tworzenia treści i planowania po zarządzanie społecznością i analizę. Nasz zespół tworzy przekonujące posty, historie i reklamy, które znajdują oddźwięk u odbiorców docelowych, zwiększając zaangażowanie i lojalność wobec marki. Pozostań w kontakcie ze swoimi klientami i buduj dynamiczną społeczność online dzięki naszym usługom zarządzania mediami społecznościowymi.",
+            type: "usługi",
+            buttonText: "Dowiedz się więcej",
             tags: [
                 {
                     id: 1,
-                    name: "Social Media Strategy",
+                    name: "Strategia Mediów Społecznościowych",
                 },
                 {
                     id: 2,
-                    name: "Content Creation & Planning",
+                    name: "Tworzenie i Planowanie Treści",
                 },
                 {
                     id: 3,
-                    name: "Content Managing & Publishing",
+                    name: "Zarządzanie Treścią i Publikowanie",
                 },
                 {
                     id: 4,
-                    name: "Monitoring & Analysis",
+                    name: "Monitorowanie i Analiza",
                 },
             ],
         },
