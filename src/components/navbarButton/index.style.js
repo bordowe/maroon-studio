@@ -23,7 +23,7 @@ export const NavbarButton = styled.button`
         transition: 0.3s;
     }
 
-    @media (width < 769px) {
+    /* @media (width < 769px) {
         margin-right: 20px;
-    }
+    } */
 `
