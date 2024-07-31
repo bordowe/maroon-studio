@@ -170,7 +170,12 @@ const MobileNavbarDropdown = () => {
                     ) : (
                         <NavbarDropdownLink
                             href={item.link}
-                            style={{ textDecoration: "line-through" }}
+                            style={
+                                item.name === "blog" ||
+                                item.name === "case studies"
+                                    ? { textDecoration: "line-through" }
+                                    : {}
+                            }
                         >
                             {item.name}
                         </NavbarDropdownLink>
